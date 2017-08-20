@@ -44,6 +44,6 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-follower_id | integer | foreign key (references users), indexed
+following_id | integer | foreign key (references users), indexed
 board_id      | integer   | foreign key (references boards), indexed
 topic_id | integer | foreign key (references topics), indexed
