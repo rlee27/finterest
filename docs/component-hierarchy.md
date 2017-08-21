@@ -38,6 +38,7 @@
 - BoardTools
 - BoardIndex
   + BoardIndexItem
+- BoardDetail
 
 **NewBoardContainer**
 - NewBoardForm
