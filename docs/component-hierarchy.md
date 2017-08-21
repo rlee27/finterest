@@ -53,7 +53,14 @@
 
 **FollowsContainer (may need to split to followers and following, based on routes)**
 - FollowersIndex
+  + FollowersIndexItem
 - FollowingIndex (includes people, boards, and topics)
+  + FollowingPeopleIndex
+    + FollowingPeopleIndexItem
+  + FollowingBoardIndex
+    + FollowingBoardIndexItem
+  + FollowingTopicIndex
+    + FollowingTopicIndexItem
 ----
 ----
 
