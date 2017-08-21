@@ -23,6 +23,10 @@
   + NewPinForm
   + (Note: there are uploads from user's local database or uploads from a URL, may have to use separate form components)
 
+**CommentContainer**
+- CommentIndex
+  + CommentIndexItem
+
 **TopicContainer (aka Tags)**
 - TopicIndex
   + TopicIndexItem
