@@ -9,11 +9,11 @@ Finterest is a web application inspired by Pinterest, using Ruby on Rails and Re
 4. Discover feed on home page
 
 ## Design Docs
-* [Wireframes][wireframes/]
-* [React Components][component-heirarchy.md]
-* [API Endpoints][api-endpoints.md]
-* [DB Schema][schema.md]
-* [Sample State][sample-state.md]
+* [Wireframes](wireframes/)
+* [React Components](component-heirarchy.md)
+* [API Endpoints](api-endpoints.md)
+* [DB Schema](schema.md)
+* [Sample State](sample-state.md)
 
 ## Implementation timeline
 
