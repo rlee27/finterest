@@ -1,26 +1,28 @@
 import React from 'react';
+import BasicFields from './basic_fields';
+import { merge } from 'lodash';
+import AdditionalFields from './additional_fields';
 
 const initialFields = {
   email: "",
   password: "",
   name: "",
   age: null,
-  gender: ""
+  gender: "",
+  step: 1
 };
 
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      step: 1,
-    };
+    this.state = initialFields;
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange(field) {
     return (e) => {
       this.setState({
         [field]: e.currentTarget.value
@@ -30,9 +32,9 @@ class SignUp extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, initialFields, this.state);
+    const user = Object.assign({}, {user: initialFields}, this.state);
     if (this.state.step === 1) {
-      const nextState = merge({}, initialFields, this.state.step++);
+      const nextState = merge({}, {user: initialFields}, this.state.step++);
       this.setState(nextState);
     } else {
       this.props.signup(user);

@@ -25,3 +25,5 @@ const BasicFields = ({state, handleChange, handleSubmit}) => {
     </div>
   );
 };
+
+export default BasicFields;
