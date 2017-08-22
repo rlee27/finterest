@@ -3,7 +3,7 @@
   entities: {
     currentUser: {
       id: 1
-      username: "guestuser",
+      email: "guest@example.com",
       name: "Guest"
     }
 
