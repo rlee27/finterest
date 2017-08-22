@@ -6,7 +6,6 @@ column name     | data type | details
 id              | integer   | not null, primary key
 username              | string   | not null (can pull username from email, user can edit later)
 email        | string    | not null, indexed, unique
-image_url           | string    |
 gender           | string    |
 age           | string    |
 name           | string    | not null
@@ -21,7 +20,6 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 description       | text    |
-image_url        | text      | not null
 pin_origin | string | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 board_id | integer   | not null, foreign key (references board), indexed
@@ -42,7 +40,6 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-image_url        | string    | not null
 
 ## follows
 column name | data type | details
