@@ -20,11 +20,11 @@ Finterest is a web application inspired by Pinterest, using Ruby on Rails and Re
 ### Phase 1: Backend setup and Front End User Authenticity (2 days)
 **Objective:** Functioning rails project with front-end Authenticity
 
-### Phase 2: Pins Model, API, and components (2 days)
-**Objective:** Pins can be created, read, edited, destroyed through the API.
-
-### Phase 3: Boards Model, API, and components (2 days)
+### Phase 2: Boards Model, API, and components (2 days)
 **Objective:** Boards can be created, read, edited, destroyed through the API.
+
+### Phase 3: Pins Model, API, and components (2 days)
+**Objective:** Pins can be created, read, edited, destroyed through the API.
 
 ### Phase 4: Follows Model, API, and components (2 days)
 **Objective:** Follows can be created, read, edited, destroyed through the API.
