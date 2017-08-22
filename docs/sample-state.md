@@ -1,7 +1,7 @@
 ```js
 {
   entities: {
-    currentUser: {
+    users: {
       id: 1
       email: "guest@example.com",
       name: "Guest"
@@ -45,6 +45,15 @@
         topic_id: 1,
       }
     }
+  }
+
+  session: {
+    currentUser: {
+      id: 1
+      email: "guest@example.com",
+      name: "Guest"
+    }
+    errors: []
   }
 
   forms: {
