@@ -2,7 +2,8 @@ import React from 'react';
 import SessionFormContainer from './sessions/session_form_container';
 import { Route } from 'react-router-dom';
 import SignUpContainer from './sessions/sign_up_container';
-import BackgroundImage from './sessions/sign_up_background';
+import { AuthRoute } from '../util/route_util';
+import { ProtectedHomeRoute } from '../util/route_util';
 
 const App = (props) => {
   return(
@@ -11,15 +12,8 @@ const App = (props) => {
 
       </header>
 
-      <Route path="/login" component={SessionFormContainer} />
-      <Route exact path="/" render={() => {
-          return (
-            <div>
-              <BackgroundImage />
-              <SignUpContainer />
-            </div>
-          );
-        }} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <ProtectedHomeRoute exact path="/" component={SignUpContainer} />
     </div>
   );
 };

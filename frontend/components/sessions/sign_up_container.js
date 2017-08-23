@@ -2,15 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignUp from './sign_up';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const refresh = ownProps.history.go(1);
   return({
     currentUser: state.session.currentUser,
-    errors: state.session.errors
+    errors: state.session.errors,
+    loggedIn: Boolean(state.session.currentUser),
+    refresh,
   });
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return({
     signup: (user) => {
       return dispatch(signup(user));
@@ -18,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignUp));

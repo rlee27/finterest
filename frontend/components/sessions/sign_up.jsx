@@ -3,6 +3,7 @@ import BasicFields from './basic_fields';
 import { merge } from 'lodash';
 import AdditionalFields from './additional_fields';
 import { Link } from 'react-router-dom';
+import BackgroundImage from './sign_up_background';
 
 const initialFields = {
   email: "",
@@ -17,11 +18,11 @@ const initialFields = {
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = initialFields;
+    this.state = merge({}, initialFields, {errors: this.props.errors});
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleChange(field) {
@@ -30,6 +31,13 @@ class SignUp extends React.Component {
         [field]: e.currentTarget.value
       });
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    debugger
+    if (nextProps.loggedIn) {
+      this.props.refresh();
+    }
   }
 
   renderErrors() {
@@ -61,7 +69,7 @@ class SignUp extends React.Component {
     );
   }
 
-  render(){
+  renderForm() {
     switch (this.state.step) {
       case 1:
         return (
@@ -95,6 +103,15 @@ class SignUp extends React.Component {
           </div>
         );
     }
+  }
+
+  render(){
+    return(
+      <div>
+        <BackgroundImage />
+        {this.renderForm()}
+      </div>
+    );
   }
 }
 
