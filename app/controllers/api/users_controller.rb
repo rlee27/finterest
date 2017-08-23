@@ -9,6 +9,22 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def submit
+    @user = User.new(user_params)
+    @user.valid?
+    user_errors = []
+    user_errors.concat(
+      @user.errors.messages[:email]) unless @user.errors[:email].empty?
+    user_errors.concat(
+      @user.errors.messages[:password]) unless @user.errors[:password].empty?
+
+    if user_errors.empty?
+      render json: {}
+    else
+      render json: user_errors, status: 422
+    end
+  end
+
   def destroy
     @user = User.find_by_credentials(
       params[:user][:email],

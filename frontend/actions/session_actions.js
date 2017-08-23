@@ -28,6 +28,18 @@ export const signup = (user) => {
   };
 };
 
+export const submit = (user) => {
+  return (dispatch) => {
+    return APIUtil.submit(user)
+      .then((user) => {
+        return dispatch(receiveCurrentUser(null));
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+    });
+  };
+};
+
 export const login = (user) => {
   return (dispatch) => {
     return APIUtil.login(user)

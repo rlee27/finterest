@@ -20,3 +20,11 @@ export const logout = () => {
     method: 'DELETE',
   });
 };
+
+export const submit = (user) => {
+  return $.ajax({
+    url: 'api/users/submit',
+    method: 'POST',
+    data: { user }
+  });
+};

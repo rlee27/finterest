@@ -1,16 +1,6 @@
 import React from 'react';
 
-const BasicFields = ({state, handleChange, handleSubmit}) => {
-  const renderErrors = () => {
-    return(
-      <ul>
-        {state.errors.map((error, i) => {
-          return <li key={`error-${i}`}>{error}</li>;
-        })}
-      </ul>
-    );
-  };
-
+const BasicFields = ({ state, handleChange, handleSubmit, renderErrors }) => {
   return(
     <div className="session-form-container">
       <h3>Welcome to Finterest</h3>

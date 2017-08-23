@@ -43,7 +43,7 @@ class SignUp extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => {
-          return <li key={`error-${i}`}>{error}</li>;
+          return <li key={`error-${i}`} className="form-errors">{error}</li>;
         })}
       </ul>
     );
@@ -53,9 +53,11 @@ class SignUp extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, {user: initialFields}, this.state);
     if (this.state.step === 1) {
-      const nextState = merge({}, {user: initialFields}, this.state.step++);
-
-      this.setState(nextState);
+      this.props.submit(user)
+        .then(() => {
+          const nextState = merge({}, this.state, this.state.step++);
+          return this.setState(nextState);
+        });
     } else {
       this.props.signup(user);
     }
@@ -78,11 +80,11 @@ class SignUp extends React.Component {
               {this.loginButton()}
             </header>
             <div className="form-container">
-              {this.renderErrors()}
               <BasicFields
                 state={this.state}
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
+                renderErrors={this.renderErrors}
                 />
             </div>
           </div>
@@ -98,6 +100,7 @@ class SignUp extends React.Component {
                 state={this.state}
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
+                renderErrors={this.renderErrors}
               />
             </div>
           </div>
