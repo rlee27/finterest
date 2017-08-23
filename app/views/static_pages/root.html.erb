@@ -1,4 +1,10 @@
 <script type="text/javascript">
+  window.staticImages = {
+    background: "<%= image_path "/images/jellyfish.png" %> ",
+  }
+</script>
+
+<script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",

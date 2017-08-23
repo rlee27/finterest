@@ -75,7 +75,7 @@ input {
 }
 
 .background-image {
-  background: url('jellyfish.png');
+  background: image-url('jellyfish.png');
   z-index: -1;
   min-height: 100%;
   min-width: 100%;
