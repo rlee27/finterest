@@ -6,7 +6,7 @@ const AdditionalFields = ({state, handleChange, handleSubmit}) => {
       <h3>Welcome to Finterest</h3>
       <br />
       <form className="session-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Full Name:
+        <label htmlFor="name" className="session-label">Full Name
           <input type="text"
             value={state.name}
             onChange={handleChange('name')}

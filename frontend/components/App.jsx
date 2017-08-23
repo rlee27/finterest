@@ -3,11 +3,11 @@ import SessionFormContainer from './sessions/session_form_container';
 import { Route } from 'react-router-dom';
 import SignUpContainer from './sessions/sign_up_container';
 
-const App = () => {
+const App = (props) => {
   return(
-    <div>
+    <div className="parent">
       <header>
-        <h1>Finterest</h1>
+
       </header>
 
       <Route path="/login" component={SessionFormContainer} />

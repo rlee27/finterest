@@ -17,14 +17,14 @@ const BasicFields = ({state, handleChange, handleSubmit}) => {
       <br />
       {renderErrors()}
       <form className="session-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email:
+        <label htmlFor="email" className="session-label">Email
           <input type="text"
             value={state.email}
             onChange={handleChange('email')}
           />
         </label>
         <br />
-        <label htmlFor="password">Password:
+        <label htmlFor="password" className="session-label">Password
           <input type="password"
             value={state.password}
             onChange={handleChange('password')}

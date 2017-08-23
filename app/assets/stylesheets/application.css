@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.session-form-container {
+   background-color: #68baed;
+   padding: 50px;
+   border-radius: 10px;
+   font-weight: 700;
+}
+
+.session-form-container h3 {
+  text-align: center;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-label {
+   text-align: right;
+}
+
+input {
+   margin: 0px 10px;
+   border-radius: 5px;
+}

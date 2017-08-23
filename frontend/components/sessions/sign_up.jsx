@@ -2,6 +2,7 @@ import React from 'react';
 import BasicFields from './basic_fields';
 import { merge } from 'lodash';
 import AdditionalFields from './additional_fields';
+import { Link } from 'react-router-dom';
 
 const initialFields = {
   email: "",
@@ -52,25 +53,47 @@ class SignUp extends React.Component {
     }
   }
 
+  loginButton() {
+    return (
+      <Link to="/login">
+        <button>Log In</button>
+      </Link>
+    );
+  }
+
   render(){
     switch (this.state.step) {
       case 1:
         return (
           <div>
-          {this.renderErrors()}
-          <BasicFields
-            state={this.state}
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-          />
+            <header>
+              {this.loginButton()}
+            </header>
+            <div className="form-container">
+              {this.renderErrors()}
+              <BasicFields
+                state={this.state}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                />
+            </div>
           </div>
         );
       case 2:
-        return <AdditionalFields
-          state={this.state}
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-        />;
+        return(
+          <div>
+            <header>
+              {this.loginButton()}
+            </header>
+            <div className="form-container">
+              <AdditionalFields
+                state={this.state}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+              />
+            </div>
+          </div>
+        );
     }
   }
 }
