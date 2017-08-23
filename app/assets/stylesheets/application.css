@@ -78,7 +78,7 @@ input {
   overflow: hidden;
   z-index: -1;
   position: fixed;
-  background: image-url('jellyfish.png');
+  background: url('jellyfish.png');
   top: 0;
   left: 0;
   background-size: cover;
