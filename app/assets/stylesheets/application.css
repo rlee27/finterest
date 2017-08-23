@@ -75,12 +75,13 @@ input {
 }
 
 .background-image {
-  background: url('jellyfish.jpg') no-repeat center center fixed;
+  background: url('jellyfish.png');
   z-index: -1;
   min-height: 100%;
   min-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  -webkit-background-size: cover;
+  background-position: 0px -1400px;
+  background-size: cover;
 }
