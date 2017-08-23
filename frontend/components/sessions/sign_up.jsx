@@ -34,7 +34,6 @@ class SignUp extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (nextProps.loggedIn) {
       this.props.refresh();
     }

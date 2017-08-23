@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { merge } from 'lodash';
+import { Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {

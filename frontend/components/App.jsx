@@ -13,7 +13,7 @@ const App = (props) => {
       </header>
 
       <AuthRoute path="/login" component={SessionFormContainer} />
-      <ProtectedHomeRoute exact path="/" component={SignUpContainer} />
+      <ProtectedHomeRoute path="/" component={SignUpContainer} />
     </div>
   );
 };

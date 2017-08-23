@@ -21,10 +21,11 @@
 .form-container {
   display: flex;
   justify-content: center;
+  margin-top: 200px;
 }
 
 .session-form-container {
-   background-color: #30b9fb;
+   background-color: #82a3cf;
    padding: 50px;
    border-radius: 10px;
    font-weight: 700;
@@ -78,7 +79,6 @@ input {
   overflow: hidden;
   z-index: -1;
   position: fixed;
-  background: url('jellyfish.png');
   top: 0;
   left: 0;
   background-size: cover;
@@ -93,6 +93,6 @@ input {
 
 @-webkit-keyframes scroll {
   0% {
-    transform: translateY(-1200px);
+    transform: translateY(-900px);
   }
 }

@@ -15,11 +15,11 @@ const Auth = ({component: Component, path, loggedIn}) => {
   );
 }
 
-const Protected = ({ component: Component, path, loggedIn }) => {
+const HomeProtected = ({ component: Component, path, loggedIn }) => {
   return(
     <Route
-      path={ path }
-      render={ props => loggedIn ? <h1>hello</h1> : <SignUpContainer /> }
+      exact path="/"
+      render={ props => loggedIn ? <h1>hello, this will be home feed soon..</h1> : <SignUpContainer /> }
     />
   );
 }
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
   }
 }
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
-export const ProtectedHomeRoute = withRouter(connect(mapStateToProps, null)(Protected));
+export const ProtectedHomeRoute = withRouter(connect(mapStateToProps, null)(HomeProtected));
