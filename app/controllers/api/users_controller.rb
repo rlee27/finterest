@@ -13,10 +13,18 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     @user.valid?
     user_errors = []
-    user_errors.concat(
-      @user.errors.messages[:email]) unless @user.errors[:email].empty?
-    user_errors.concat(
-      @user.errors.messages[:password]) unless @user.errors[:password].empty?
+
+    unless @user.errors[:email].empty?
+      @user.errors[:email].each do |error|
+        user_errors.push("Email #{error}")
+      end
+    end
+
+    unless @user.errors[:password].empty?
+      @user.errors[:password].each do |error|
+        user_errors.push("Email #{error}")
+      end
+    end
 
     if user_errors.empty?
       render json: {}
