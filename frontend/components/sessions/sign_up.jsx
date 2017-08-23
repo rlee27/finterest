@@ -54,6 +54,7 @@ class SignUp extends React.Component {
     const user = Object.assign({}, {user: initialFields}, this.state);
     if (this.state.step === 1) {
       const nextState = merge({}, {user: initialFields}, this.state.step++);
+
       this.setState(nextState);
     } else {
       this.props.signup(user);

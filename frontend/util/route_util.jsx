@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SignUpContainer from '../components/sessions/sign_up_container';
+import UserContainer from '../components/user/user_container';
 
 const Auth = ({component: Component, path, loggedIn}) => {
   return (
@@ -19,7 +20,7 @@ const HomeProtected = ({ component: Component, path, loggedIn }) => {
   return(
     <Route
       exact path="/"
-      render={ props => loggedIn ? <h1>hello, this will be home feed soon..</h1> : <SignUpContainer /> }
+      render={ props => loggedIn ? <UserContainer /> : <SignUpContainer /> }
     />
   );
 }
