@@ -75,13 +75,24 @@ input {
 }
 
 .background-image {
-  background: image-url('jellyfish.png');
+  overflow: hidden;
   z-index: -1;
-  min-height: 100%;
-  min-width: 100%;
   position: fixed;
+  background: image-url('jellyfish.png');
   top: 0;
   left: 0;
-  background-position: 0px -1400px;
   background-size: cover;
+  -webkit-animation: 100s scroll infinite linear;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateY(-1200px);
+  }
 }
