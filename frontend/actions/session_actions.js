@@ -21,7 +21,10 @@ export const signup = (user) => {
     return APIUtil.signup(user)
       .then((user) => {
         return dispatch(receiveCurrentUser(user));
-      });
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+    });
   };
 };
 
@@ -30,7 +33,10 @@ export const login = (user) => {
     return APIUtil.login(user)
       .then((user) => {
         return dispatch(receiveCurrentUser(user));
-      });
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+    });
   };
 };
 
@@ -39,6 +45,9 @@ export const logout = () => {
     return APIUtil.logout()
       .then((user) => {
         return dispatch(receiveCurrentUser(null));
-      });
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+    });
   };
 };

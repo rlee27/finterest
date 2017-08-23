@@ -9,7 +9,8 @@ const initialFields = {
   name: "",
   age: null,
   gender: "",
-  step: 1
+  step: 1,
+  errors: []
 };
 
 class SignUp extends React.Component {
@@ -30,6 +31,16 @@ class SignUp extends React.Component {
     };
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => {
+          return <li key={`error-${i}`}>{error}</li>;
+        })}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, {user: initialFields}, this.state);
@@ -44,11 +55,16 @@ class SignUp extends React.Component {
   render(){
     switch (this.state.step) {
       case 1:
-        return <BasicFields
-          state={this.state}
-          handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
-        />;
+        return (
+          <div>
+          {this.renderErrors()}
+          <BasicFields
+            state={this.state}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+          </div>
+        );
       case 2:
         return <AdditionalFields
           state={this.state}

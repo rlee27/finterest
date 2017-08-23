@@ -15,6 +15,7 @@ const App = () => {
     </div>
   );
 };
-// change the second route to render a user's feed page if logged in, otherwise, login/signup
+// have App component listen to the store, if currentUser render the homepage, else
+// render the signUp.
 
 export default App;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { merge } from 'lodash';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class SessionForm extends React.Component {
     this.state = {
       email: "",
       password: "",
+      errors: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +18,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.login(user);
   }
 
   update(field) {
@@ -37,19 +39,12 @@ class SessionForm extends React.Component {
     );
   }
 
-  changeForm() {
-    if (this.props.formType === 'login') {
-      return <Link to="/">Sign up instead</Link>;
-    } else {
-      return <Link to="/login">Log in instead</Link>;
-    }
-  }
-
   render() {
     return(
       <div className="session-form-container">
         <h3>Welcome to Finterest</h3>
         <br />
+        {this.renderErrors()}
         <form className="session-form" onSubmit={this.handleSubmit}>
           <label htmlFor="email">Email:
             <input type="text"
@@ -67,7 +62,7 @@ class SessionForm extends React.Component {
           <br />
           <button>Submit</button>
         </form>
-        {this.changeForm()}
+        <Link to="/">Sign up instead</Link>
       </div>
     );
   }
