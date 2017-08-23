@@ -56,7 +56,7 @@ class SignUp extends React.Component {
   loginButton() {
     return (
       <Link to="/login">
-        <button>Log In</button>
+        <button className="login-button">Log In</button>
       </Link>
     );
   }
@@ -66,7 +66,7 @@ class SignUp extends React.Component {
       case 1:
         return (
           <div>
-            <header>
+            <header className="login-header">
               {this.loginButton()}
             </header>
             <div className="form-container">
@@ -82,7 +82,7 @@ class SignUp extends React.Component {
       case 2:
         return(
           <div>
-            <header>
+            <header className="login-header">
               {this.loginButton()}
             </header>
             <div className="form-container">

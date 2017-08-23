@@ -24,7 +24,7 @@
 }
 
 .session-form-container {
-   background-color: #68baed;
+   background-color: #30b9fb;
    padding: 50px;
    border-radius: 10px;
    font-weight: 700;
@@ -46,4 +46,41 @@
 input {
    margin: 0px 10px;
    border-radius: 5px;
+   padding: 3px;
+}
+
+.login-button {
+  background-color: #b2cce8;
+  border: 0px solid white;
+  border-radius: 5px;
+  height: 30px;
+  width: 75px;
+  cursor: pointer;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.submit-button {
+  background-color: #b2cce8;
+  border: 0px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-form a {
+  text-align: center;
+}
+
+.background-image {
+  background: url('jellyfish.jpg') no-repeat center center fixed;
+  z-index: -1;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-background-size: cover;
 }

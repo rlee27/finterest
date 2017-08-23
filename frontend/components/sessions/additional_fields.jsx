@@ -13,7 +13,7 @@ const AdditionalFields = ({state, handleChange, handleSubmit}) => {
           />
         </label>
         <br />
-        <button>Submit</button>
+        <button className="submit-button">Submit</button>
       </form>
     </div>
   );

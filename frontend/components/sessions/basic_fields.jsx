@@ -31,7 +31,7 @@ const BasicFields = ({state, handleChange, handleSubmit}) => {
           />
         </label>
         <br />
-        <button>Submit</button>
+        <button className="submit-button">Continue</button>
       </form>
     </div>
   );
