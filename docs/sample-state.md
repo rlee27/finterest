@@ -21,12 +21,12 @@
       1: {
         title: "Cats",
         author_id: 1,
-        collaborator_id: 2,
         category_id: 1,
         cover_id: 1,
         description: "Breeds I'm thinking about adopting",
-      }
+      },
       pinIds: [1, 4, 7]
+      callaboratorIds: [1, 5, 10]
     }
 
     topics: {
