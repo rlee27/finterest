@@ -1,5 +1,5 @@
 import React from 'react';
-import NewBoardForm from '../boards/new_board_form';
+import NewBoardContainer from '../boards/new_board_container';
 
 class User extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class User extends React.Component {
           Hi, {this.props.currentUser.name}, the rest of the site is still
           under construction...
         </h2>
-        <NewBoardForm />
+        <NewBoardContainer />
       </div>
     );
   }
