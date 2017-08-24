@@ -21,3 +21,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));
+// errors are occurring when user refreshes and signs out.. theres not re-render
