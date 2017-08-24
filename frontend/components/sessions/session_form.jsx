@@ -22,11 +22,6 @@ class SessionForm extends React.Component {
     this.props.login(user);
   }
 
-  componentDidMount() {
-    const nextState = merge({}, this.state, {errors: []});
-    this.setState(nextState);
-  }
-
   update(field) {
     return (e) => {
       this.setState({
