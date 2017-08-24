@@ -30,10 +30,16 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 author_id   | integer   | not null, foreign key (references users), indexed
-collaborator_id | integer | foreign key (references users), indexed
 topic_id | integer | foreign key (references topics), indexed
 cover_id | integer | foreign key (references pins), indexed, only one cover_id per board
 description | text    |
+
+## collaborations
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+collaborator_id          | integer   | foreign key (references users), indexed
+board_id          | integer   | foreign key (references boards), indexed
 
 ## fins
 column name | data type | details
