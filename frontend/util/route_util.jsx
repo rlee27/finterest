@@ -20,10 +20,20 @@ const HomeProtected = ({ component: Component, path, loggedIn }) => {
   return(
     <Route
       exact path="/"
-      render={ props => loggedIn ? <UserContainer /> : <SignUpContainer /> }
+      render={ props => loggedIn ? <UserContainer {...props} /> : <Component /> }
     />
   );
 }
+
+const Protected = ({ component: Component, path, loggedIn }) => {
+  return(
+    <Route
+      path={ path }
+      render={ props => loggedIn ? <Component {...props} /> : <Redirect to="/" /> }
+    />
+  );
+}
+
 const mapStateToProps = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser)
@@ -31,3 +41,4 @@ const mapStateToProps = (state) => {
 }
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedHomeRoute = withRouter(connect(mapStateToProps, null)(HomeProtected));
+export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
