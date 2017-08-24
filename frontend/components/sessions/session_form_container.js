@@ -20,4 +20,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
-// errors are occurring when user refreshes and signs out.. theres not re-render
