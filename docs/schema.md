@@ -31,9 +31,16 @@ id          | integer   | not null, primary key
 title       | string    | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 collaborator_id | integer | foreign key (references users), indexed
-category_id | integer | foreign key (references topics), indexed
+topic_id | integer | foreign key (references topics), indexed
 cover_id | integer | foreign key (references pins), indexed, only one cover_id per board
 description | text    |
+
+## fins
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+board_id       | integer    | foreign_key (references boards), indexed
+pin_id       | integer    | foreign_key (references pins), indexed
 
 ## topics
 column name | data type | details
@@ -41,14 +48,21 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 
+## popics
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+pin_id       | integer    | foreign_key (references pins), indexed
+topic_id       | integer    | foreign_key (references topics), indexed
+
 ## follows
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-following_id | integer | foreign key (references users), indexed
-board_id      | integer   | foreign key (references boards), indexed
-topic_id | integer | foreign key (references topics), indexed
+followable_id | integer | polymorphic association for boards, topics, and following, indexed with followable_type
+followable_type |string | indexed with followable_id
+(two above columns can be written in rails as `t.references :followable, polymorphic: true, index: true`)
 
 
 ## comments
