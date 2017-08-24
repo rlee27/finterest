@@ -24,6 +24,11 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :boards,
+    class_name: :Board,
+    primary_key: :id,
+    foreign_key: :author_id
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
