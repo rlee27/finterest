@@ -32,6 +32,10 @@ class Api::BoardsController < ApplicationController
     end
   end
 
+  def destroy
+    @board = Board.find(params[:id])
+  end
+
   private
 
   def board_params
