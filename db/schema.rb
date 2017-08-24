@@ -10,22 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824004636) do
+ActiveRecord::Schema.define(version: 20170824012924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
-    t.string   "title",           null: false
-    t.integer  "author_id",       null: false
-    t.integer  "collaborator_id"
+    t.string   "title",       null: false
+    t.integer  "author_id",   null: false
     t.integer  "topic_id"
     t.integer  "cover_id"
     t.text     "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["author_id"], name: "index_boards_on_author_id", using: :btree
-    t.index ["collaborator_id"], name: "index_boards_on_collaborator_id", using: :btree
     t.index ["cover_id"], name: "index_boards_on_cover_id", using: :btree
     t.index ["topic_id"], name: "index_boards_on_topic_id", using: :btree
   end
