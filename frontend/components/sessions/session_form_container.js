@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
-import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
     errors: state.session.errors,
@@ -12,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   });
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return ({
     login: (user) => {
       return dispatch(login(user));
@@ -20,5 +19,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   });
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
 // errors are occurring when user refreshes and signs out.. theres not re-render

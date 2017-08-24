@@ -31,4 +31,3 @@ const mapStateToProps = (state) => {
 }
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedHomeRoute = withRouter(connect(mapStateToProps, null)(HomeProtected));
-//add onclick when submit or link is clicked to clear errors.

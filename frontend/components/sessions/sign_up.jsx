@@ -33,12 +33,6 @@ class SignUp extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.refresh();
-    }
-  }
-
   renderErrors() {
     return(
       <ul>
