@@ -1,8 +1,9 @@
 import React from 'react';
-import SessionFormContainer from './sessions/session_form_container';
 import { Route } from 'react-router-dom';
-import SignUpContainer from './sessions/sign_up_container';
 import { AuthRoute, ProtectedHomeRoute } from '../util/route_util';
+import SessionFormContainer from './sessions/session_form_container';
+import SignUpContainer from './sessions/sign_up_container';
+import BoardDetailContainer from './boards/board_detail_container';
 
 const App = (props) => {
   return(
@@ -13,6 +14,7 @@ const App = (props) => {
 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <ProtectedHomeRoute path="/" component={SignUpContainer} />
+      <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
     </div>
   );
 };

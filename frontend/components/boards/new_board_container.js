@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NewBoardForm from './new_board_form';
 import { createBoard } from '../../actions/board_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const currentUserId = state.session.currentUser.id;
   const board = state.entities.boards.board;
   return ({
@@ -12,7 +13,7 @@ const mapStateToProps = (state) => {
   });
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     createBoard: (currentUserId, board) => {
       return dispatch(createBoard(currentUserId, board));
@@ -20,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewBoardForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NewBoardForm));
