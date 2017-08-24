@@ -2,8 +2,7 @@ import React from 'react';
 import SessionFormContainer from './sessions/session_form_container';
 import { Route } from 'react-router-dom';
 import SignUpContainer from './sessions/sign_up_container';
-import { AuthRoute } from '../util/route_util';
-import { ProtectedHomeRoute } from '../util/route_util';
+import { AuthRoute, ProtectedHomeRoute } from '../util/route_util';
 
 const App = (props) => {
   return(

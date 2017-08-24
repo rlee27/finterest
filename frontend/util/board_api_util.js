@@ -11,3 +11,11 @@ export const requestABoard = (userId, boardId) => {
     method: 'GET'
   });
 };
+
+export const createBoard = (userId, board) => {
+  return $.ajax({
+    url: `api/users/${userId}/boards`,
+    method: 'POST',
+    data: { board }
+  });
+};

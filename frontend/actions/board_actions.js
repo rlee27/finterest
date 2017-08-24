@@ -33,3 +33,12 @@ export const getABoard = (userId, boardId) => {
       });
   };
 };
+
+export const createBoard = (userId, board) => {
+  return (dispatch) => {
+    return BoardAPIUtil.createBoard(userId, board)
+      .then((board) => {
+        return dispatch(receiveABoard(board));
+      });
+  };
+};
