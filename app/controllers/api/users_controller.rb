@@ -9,6 +9,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    if @user
+      render :show
+    else
+      render json: ["User does not exist"], status: 404
+    end
+  end
+
   def submit
     @user = User.new(user_params)
     @user.valid?
