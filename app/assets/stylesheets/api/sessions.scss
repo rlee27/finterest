@@ -10,7 +10,7 @@
 }
 
 .session-form-container {
-   background-color: #82a3cf;
+   background-color: #74D6FF;
    padding: 50px;
    border-radius: 10px;
    font-weight: 700;
@@ -36,12 +36,18 @@ input {
 }
 
 .login-button {
-  background-color: #b2cce8;
+  background-color: #007EB2;
   border: 0px solid white;
   border-radius: 5px;
   height: 30px;
   width: 75px;
   cursor: pointer;
+  z-index: 2;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  color: white;
 }
 
 .login-header {
@@ -50,10 +56,13 @@ input {
 }
 
 .submit-button {
-  background-color: #b2cce8;
+  background-color: #007EB2;
   border: 0px solid white;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 18px;
+  padding: 6px;
+  color: white;
 }
 
 .session-form a {
