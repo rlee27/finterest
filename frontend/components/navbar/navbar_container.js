@@ -7,7 +7,9 @@ import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = ({ session }, ownProps) => {
   const currentUserName = selectUserName(session);
+  const currentUser = session.currentUser;
   return ({
+    currentUser,
     currentUserName,
   });
 };

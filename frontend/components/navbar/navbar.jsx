@@ -6,10 +6,15 @@ class NavBar extends React.Component {
 
     this.logout = this.logout.bind(this);
     this.goHome = this.goHome.bind(this);
+    this.toShow = this.toShow.bind(this);
   }
 
   logout() {
     this.props.logout();
+  }
+
+  toShow() {
+    this.props.history.push(`/${this.props.currentUser.id}`);
   }
 
   goHome() {
@@ -49,7 +54,7 @@ class NavBar extends React.Component {
               </button>
             </li>
             <li>
-              <button className="nav-button">
+              <button className="nav-button" onClick={this.toShow}>
                 [user-img] {this.props.currentUserName}
               </button>
             </li>

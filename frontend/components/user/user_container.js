@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import User from './user';
-import { receiveUser } from '../../actions/user_actions';
+import { receiveUser, getUser } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
