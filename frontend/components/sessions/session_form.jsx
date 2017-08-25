@@ -16,15 +16,14 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user);
-  }
-
-  componentDidMount() {
-    const nextState = merge({}, this.state, {errors: []});
-    this.setState(nextState);
   }
 
   update(field) {
