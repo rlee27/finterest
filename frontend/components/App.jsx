@@ -12,6 +12,7 @@ const App = (props) => {
       <header>
         <NavBarContainer />
       </header>
+      
       <div className="main-content">
         <AuthRoute path="/login" component={SessionFormContainer} />
         <ProtectedHomeRoute path="/" component={UserContainer} />
