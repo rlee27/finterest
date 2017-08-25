@@ -27,7 +27,7 @@ class NewBoardForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.board.title) {
+    if (nextProps.board.title && this.props !== nextProps) {
       const urlPath = nextProps.board.title.split(" ").join("-");
       this.props.history.push(`${this.state.author_id}/${urlPath}`);
     }
