@@ -6,6 +6,10 @@ class User extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.receiveCurrentUser(this.props.currentUser);
+  }
+
   render(){
     return(
       <div>

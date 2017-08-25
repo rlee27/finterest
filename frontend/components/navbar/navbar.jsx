@@ -13,7 +13,7 @@ class NavBar extends React.Component {
   }
 
   goHome() {
-    if (!this.props.location.pathname === "/") {
+    if (!(this.props.location.pathname === "/")) {
       this.props.history.push("/");
     } else {
       console.log(`Hello you're currently on the home page,
