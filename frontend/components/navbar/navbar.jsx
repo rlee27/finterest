@@ -9,9 +9,7 @@ class NavBar extends React.Component {
   }
 
   logout() {
-    this.props.logout().then(() => {
-      return this.goHome();
-    });
+    this.props.logout();
   }
 
   goHome() {
