@@ -36,8 +36,7 @@ class NewBoardForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const board = Object.assign({}, this.state);
-    this.props.createBoard(this.props.author_id, board)
-      .then(() => this.closeModal());
+    this.props.createBoard(this.props.author_id, board);
   }
 
   update(field) {

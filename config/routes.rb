@@ -8,7 +8,8 @@ Rails.application.routes.draw do
       end
     end
 
-    post '/users/submit'
+    post '/users/submit', to: 'users#submit'
+    get '/users/:userId/boards/:boardTitle', to: 'boards#show'
 
     resource :sessions, only: [:create, :destroy]
   end
