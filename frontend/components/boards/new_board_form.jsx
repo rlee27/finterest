@@ -26,13 +26,6 @@ class NewBoardForm extends React.Component {
     this.setState({ modalOpen: true });
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.board) {
-      const urlPath = nextProps.board.title.split(" ").join("-");
-      this.props.history.push(`${this.state.author_id}/${urlPath}`);
-    }
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const board = Object.assign({}, this.state);
