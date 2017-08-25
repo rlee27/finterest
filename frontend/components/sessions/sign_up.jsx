@@ -25,6 +25,10 @@ class SignUp extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleChange(field) {
     return (e) => {
       this.setState({
@@ -50,10 +54,14 @@ class SignUp extends React.Component {
       this.props.submit(user)
         .then(() => {
           const nextState = merge({}, this.state, this.state.step++);
+          this.props.clearErrors();
           return this.setState(nextState);
         });
     } else {
-      this.props.signup(user);
+      this.props.signup(user)
+        .then(() => {
+          this.props.clearErrors();
+        });
     }
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup, submit } from '../../actions/session_actions';
+import { signup, submit, clearErrors } from '../../actions/session_actions';
 import SignUp from './sign_up';
 import { withRouter } from 'react-router-dom';
 
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     submit: (user) => {
       return dispatch(submit(user));
+    },
+    clearErrors: () => {
+      return dispatch(clearErrors());
     }
   });
 };
