@@ -18,6 +18,7 @@ const App = (props) => {
         <AuthRoute path="/login" component={SessionFormContainer} />
         <ProtectedHomeRoute path="/" component={HomepageContainer} />
         <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
+        <Route exact path="/:userId" component={UserContainer} />
       </div>
     </div>
   );

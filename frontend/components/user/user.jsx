@@ -7,15 +7,14 @@ class User extends React.Component {
   }
 
   componentDidMount() {
-    this.props.receiveCurrentUser(this.props.currentUser);
+    this.props.getUser(this.props.userId);
   }
 
   render(){
     return(
       <div>
         <h2>
-          Hi, {this.props.currentUser.name}, the rest of the site is still
-          under construction...
+          This is the user's page who's email is {this.props.user.email}
         </h2>
         <NewBoardContainer />
       </div>
