@@ -70,7 +70,8 @@ class NewBoardForm extends React.Component {
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
-          style={newBoardStyle}>
+          style={newBoardStyle}
+          contentLabel='sans-serif'>
 
           <form onSubmit={this.handleSubmit}>
             <h3>Create Board</h3>
@@ -80,12 +81,12 @@ class NewBoardForm extends React.Component {
             <input
               type="text" value={this.state.title}
               onChange={this.update('title')} />
-            <br />
-            <div className="board-form-buttons">
-              <button className="basic-button" onClick={this.closeModal}>Cancel</button>
-              <button className="basic-button">Create</button>
-            </div>
           </form>
+          <br />
+          <div className="board-form-buttons">
+            <button className="basic-button" onClick={this.closeModal}>Cancel</button>
+            <button className="basic-button" onClick={this.handleSubmit}>Create</button>
+          </div>
         </Modal>
       </div>
     );

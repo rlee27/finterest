@@ -1,21 +1,23 @@
 const style = {
   overlay : {
     position        : 'fixed',
-    top             : 0,
-    left            : 0,
-    right           : 0,
-    bottom          : 0,
     backgroundColor : 'rgba(255, 255, 255, 0.75)',
-    zIndex          : 800
+    zIndex          : 800,
+    display         : 'flex',
+    height          : '100%',
+    width           : '100%',
+    justifyContent  : 'center',
+    alignItems      : 'center',
   },
   content : {
     position        : 'fixed',
-    top             : '100px',
-    left            : '150px',
-    right           : '150px',
-    bottom          : '100px',
+    top             : 'unset',
+    left            : 'unset',
+    right           : 'unset',
+    bottom          : 'unset',
+    height          : '200px',
+    width           : '150px',
     border          : '1px solid #ccc',
-    padding         : '20px',
     zIndex          : 800,
     backgroundColor : '#74D6FF',
   }
