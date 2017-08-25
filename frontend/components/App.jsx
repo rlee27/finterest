@@ -5,6 +5,7 @@ import SessionFormContainer from './sessions/session_form_container';
 import BoardDetailContainer from './boards/board_detail_container';
 import NavBarContainer from './navbar/navbar_container';
 import UserContainer from './user/user_container';
+import HomepageContainer from './homepage/homepage_container';
 
 const App = (props) => {
   return(
@@ -12,10 +13,10 @@ const App = (props) => {
       <header>
         <NavBarContainer />
       </header>
-      
+
       <div className="main-content">
         <AuthRoute path="/login" component={SessionFormContainer} />
-        <ProtectedHomeRoute path="/" component={UserContainer} />
+        <ProtectedHomeRoute path="/" component={HomepageContainer} />
         <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
       </div>
     </div>
