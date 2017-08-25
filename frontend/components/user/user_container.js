@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import User from './user';
-import { receiveUser, getUser } from '../../actions/user_actions';
+import { getUser } from '../../actions/user_actions';
+import { getUserBoards } from '../../actions/board_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,9 +21,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getUser: (userId) => {
       return dispatch(getUser(userId));
     },
-    receiveUser: (user) => {
-      return dispatch(receiveUser(user));
-    }
+    getUserBoards: (userId) => {
+      return dispatch(getUserBoards(userId));
+    },
   });
 };
 

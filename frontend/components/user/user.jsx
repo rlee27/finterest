@@ -7,7 +7,10 @@ class User extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getUser(this.props.userId);
+    this.props.getUser(this.props.userId)
+      .then((user) => {
+        return this.props.getUserBoards(this.props.userId);
+      });
   }
 
   render(){
