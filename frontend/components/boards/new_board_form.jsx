@@ -18,12 +18,26 @@ class NewBoardForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => {
+          return <li key={`error-${i}`}>{error}</li>;
+        })}
+      </ul>
+    );
+  }
+
   closeModal() {
     this.setState({ modalOpen: false });
   }
 
   openModal() {
     this.setState({ modalOpen: true });
+  }
+
+  componentDidMount() {
+    return this.props.clearErrors();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -56,14 +70,21 @@ class NewBoardForm extends React.Component {
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
-          style={newBoardStyle}
-          contentLabel="aria-label">
+          style={newBoardStyle}>
 
           <form onSubmit={this.handleSubmit}>
+            <h3>Create Board</h3>
+            <br />
+            {this.renderErrors()}
             <label htmlFor="title">Title</label>
             <input
               type="text" value={this.state.title}
               onChange={this.update('title')} />
+            <br />
+            <div className="board-form-buttons">
+              <button className="basic-button" onClick={this.closeModal}>Cancel</button>
+              <button className="basic-button">Create</button>
+            </div>
           </form>
         </Modal>
       </div>

@@ -1,9 +1,14 @@
-import { RECEIVE_ALL_USER_BOARDS, RECEIVE_A_BOARD } from '../actions/board_actions';
+import {
+  RECEIVE_ALL_USER_BOARDS,
+  RECEIVE_A_BOARD,
+  CLEAR_ERRORS,
+  RECEIVE_ERRORS } from '../actions/board_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
   userBoards: {},
   board: {},
+  errors: [],
 };
 
 const BoardReducer = (state = defaultState, action) => {
@@ -15,6 +20,12 @@ const BoardReducer = (state = defaultState, action) => {
       return nextState;
     case RECEIVE_A_BOARD:
       nextState = merge({}, state, {board: action.board});
+      return nextState;
+    case RECEIVE_ERRORS:
+      nextState = merge({}, state, {errors: action.errors});
+      return nextState;
+    case CLEAR_ERRORS:
+      nextState = merge({}, state, {errors: []});
       return nextState;
     default:
       return state;
