@@ -20,7 +20,7 @@ const HomeProtected = ({ component: Component, path, loggedIn }) => {
   return(
     <Route
       exact path="/"
-      render={ props => loggedIn ? <UserContainer {...props} /> : <Component /> }
+      render={ props => loggedIn ? <Component {...props} /> : <SignUpContainer /> }
     />
   );
 }
