@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create, :destroy, :show] do
       member do
-        resources :boards, except: [:edit, :new]
+        resources :boards, except: [:edit, :new, :show]
       end
     end
 

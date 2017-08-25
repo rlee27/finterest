@@ -2,10 +2,10 @@ import * as BoardAPIUtil from '../util/board_api_util';
 export const RECEIVE_ALL_USER_BOARDS = "RECEIVE_ALL_USER_BOARDS";
 export const RECEIVE_A_BOARD = "RECEIVE_A_BOARD";
 
-export const receiveAllBoards = (boards) => {
+export const receiveAllBoards = (userBoards) => {
   return({
     type: RECEIVE_ALL_USER_BOARDS,
-    boards,
+    userBoards,
   });
 };
 
@@ -19,15 +19,15 @@ export const receiveABoard = (board) => {
 export const getUserBoards = (userId) => {
   return (dispatch) => {
     return BoardAPIUtil.requestUserBoards(userId)
-      .then((boards) => {
-        return dispatch(receiveAllBoards(boards));
+      .then((userBoards) => {
+        return dispatch(receiveAllBoards(userBoards));
       });
   };
 };
 
-export const getABoard = (userId, boardId) => {
+export const getABoard = (userId, boardTitle) => {
   return (dispatch) => {
-    return BoardAPIUtil.requestABoard(userId, boardId)
+    return BoardAPIUtil.requestABoard(userId, boardTitle)
       .then((board) => {
         return dispatch(receiveABoard(board));
       });

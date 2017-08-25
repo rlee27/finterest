@@ -3,21 +3,28 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BoardDetailItem from './board_detail_item';
 import { selectBoard } from '../../reducers/selectors';
-import { requestUserBoards } from '../../util/board_api_util';
+import { getABoard, getUserBoards } from '../../actions/board_actions';
 
-const mapStateToProps= (state, { match }) => {
-  const board = state.entities.boards.board;
-  const userId = match.params.userId;
+const mapStateToProps= ({ entities: { boards } } , { match: { params } }) => {
+  const board = boards.board;
+  const userId = params.userId;
+  const boardTitle = params.boardTitle;
+  const userBoards = boards.userBoards;
   return ({
     board,
-    userId
+    userBoards,
+    userId,
+    boardTitle
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     getUserBoards: (userId) => {
-      return dispatch(requestUserBoards(userId));
+      return dispatch(getUserBoards(userId));
+    },
+    getABoard: (userId, boardTitle) => {
+      return dispatch(getABoard(userId, boardTitle));
     }
   });
 };

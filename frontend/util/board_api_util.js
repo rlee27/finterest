@@ -5,9 +5,9 @@ export const requestUserBoards = (userId) => {
   });
 };
 
-export const requestABoard = (userId, boardId) => {
+export const requestABoard = (userId, boardTitle) => {
   return $.ajax({
-    url: `api/users/${userId}/boards/${boardId}`,
+    url: `api/users/${userId}/boards/${boardTitle}`,
     method: 'GET'
   });
 };
