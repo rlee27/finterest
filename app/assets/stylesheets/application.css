@@ -17,3 +17,24 @@
 .main-content > * {
   padding-top: 65px;
 }
+
+.basic-button {
+  height: 100%;
+  background-color: inherit;
+  border: none;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 4px;
+  color: white;
+  padding: 10px;
+}
+
+.basic-button:hover {
+  background-color: #007EB2;
+  border-radius: 20px;
+}
+
+.basic-button:active {
+  box-shadow: 0 0 0 3px white, 0 0 0 4px #007EB2;
+}
