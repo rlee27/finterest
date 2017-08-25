@@ -40,17 +40,14 @@ class NewBoardForm extends React.Component {
     return this.props.clearErrors();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.board.title && this.props !== nextProps) {
-      const urlPath = nextProps.board.title.split(" ").join("-");
-      this.props.history.push(`${this.state.author_id}/${urlPath}`);
-    }
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const board = Object.assign({}, this.state);
-    this.props.createBoard(this.props.author_id, board);
+    this.props.createBoard(this.props.author_id, board)
+    .then(() => {
+      const urlPath = this.state.title.split(" ").join("-");
+      this.props.history.push(`${this.state.author_id}/${urlPath}`);
+    });
   }
 
   update(field) {
