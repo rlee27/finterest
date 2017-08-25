@@ -57,6 +57,9 @@ class NewBoardForm extends React.Component {
             <input
               type="text" value={this.state.title}
               onChange={this.update('title')} />
+            <button>
+              Create Board!
+            </button>
           </form>
 
         </Modal>

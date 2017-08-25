@@ -6,7 +6,7 @@ const style = {
     right           : 0,
     bottom          : 0,
     backgroundColor : 'rgba(255, 255, 255, 0.75)',
-    zIndex          : 10
+    zIndex          : 800
   },
   content : {
     position        : 'fixed',
@@ -16,7 +16,7 @@ const style = {
     bottom          : '100px',
     border          : '1px solid #ccc',
     padding         : '20px',
-    zIndex          : 11
+    zIndex          : 800
   }
 };
 
