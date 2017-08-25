@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import BoardIndex from './board_index';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const currentUserId = state.session.currentUser.id;
   const board = state.entities.boards.board;
   return ({
@@ -19,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardIndex));
