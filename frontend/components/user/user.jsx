@@ -5,6 +5,8 @@ import BoardIndexContainer from '../boards/board_index_container';
 class User extends React.Component {
   constructor(props) {
     super(props);
+
+    this.protectBoardCreate = this.protectBoardCreate.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +25,14 @@ class User extends React.Component {
     }
   }
 
+  protectBoardCreate() {
+    if (this.props.currentUser.id === parseInt(this.props.userId)) {
+      return <NewBoardContainer />;
+    } else {
+      return null;
+    }
+  }
+
   render(){
     return(
       <div>
@@ -30,7 +40,7 @@ class User extends React.Component {
           This is the user's page who's email is {this.props.user.email}
         </h2>
         <div className="board-list">
-          <NewBoardContainer />
+          {this.protectBoardCreate()}
           <BoardIndexContainer />
         </div>
       </div>
