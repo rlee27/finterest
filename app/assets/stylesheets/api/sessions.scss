@@ -42,17 +42,18 @@ input {
   height: 30px;
   width: 75px;
   cursor: pointer;
-  z-index: 2;
-  position: fixed;
-  top: 20px;
-  right: 20px;
   font-size: 14px;
   color: white;
+  margin: 5px;
 }
 
 .login-header {
   display: flex;
   flex-direction: row-reverse;
+  position: fixed;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
 }
 
 .submit-button {
@@ -87,6 +88,6 @@ input {
 
 @-webkit-keyframes scroll {
   0% {
-    transform: translateY(-900px);
+    transform: translateY(-700px);
   }
 }

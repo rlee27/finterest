@@ -23,6 +23,7 @@ class SignUp extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   componentDidMount() {
@@ -73,6 +74,23 @@ class SignUp extends React.Component {
     );
   }
 
+  loginDemo() {
+    const demoUser = {
+      email: 'password',
+      password: 'password'
+    };
+    this.props.login(demoUser);
+  }
+
+  demoButton() {
+    return(
+      <button onClick={this.loginDemo}
+        className="login-button">
+        Demo
+      </button>
+    );
+  }
+
   renderForm() {
     switch (this.state.step) {
       case 1:
@@ -80,6 +98,7 @@ class SignUp extends React.Component {
           <div>
             <header className="login-header">
               {this.loginButton()}
+              {this.demoButton()}
             </header>
             <div className="form-container">
               <BasicFields
