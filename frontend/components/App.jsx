@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { AuthRoute, ProtectedHomeRoute } from '../util/route_util';
+import { Route, Switch } from 'react-router-dom';
+import { AuthRoute, ProtectedHomeRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './sessions/session_form_container';
 import BoardDetailContainer from './boards/board_detail_container';
 import NavBarContainer from './navbar/navbar_container';
@@ -15,10 +15,12 @@ const App = (props) => {
       </header>
 
       <div className="main-content">
-        <AuthRoute path="/login" component={SessionFormContainer} />
         <ProtectedHomeRoute path="/" component={HomepageContainer} />
         <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
-        <Route exact path="/:userId" component={UserContainer} />
+        <Switch>
+          <AuthRoute exact path="/login" component={SessionFormContainer} />
+          <Route path="/:userId" component={UserContainer} />
+        </Switch>
       </div>
     </div>
   );
