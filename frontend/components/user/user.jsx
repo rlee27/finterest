@@ -1,12 +1,11 @@
 import React from 'react';
 import NewBoardContainer from '../boards/new_board_container';
 import BoardIndexContainer from '../boards/board_index_container';
+import UserDetailContainer from './user_detail_container';
 
 class User extends React.Component {
   constructor(props) {
     super(props);
-
-    this.protectBoardCreate = this.protectBoardCreate.bind(this);
   }
 
   componentDidMount() {
@@ -18,7 +17,7 @@ class User extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params !== nextProps.match.params) {
-      this.props.getUser(this.props.userId)
+      this.props.getUser(parseInt(nextProps.match.params.userId))
         .then((user) => {
           return this.props.getUserBoards(this.props.userId);
         });
@@ -33,12 +32,18 @@ class User extends React.Component {
     }
   }
 
+  checkUser() {
+    if (this.props.user.name) {
+      return <UserDetailContainer />;
+    } else {
+      return null;
+    }
+  }
+
   render(){
     return(
       <div>
-        <h2>
-          This is the user's page who's email is {this.props.user.email}
-        </h2>
+        {this.checkUser()}
         <div className="board-list">
           {this.protectBoardCreate()}
           <BoardIndexContainer />
