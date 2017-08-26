@@ -1,21 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { values } from 'lodash';
+import { getUserBoards } from '../../actions/board_actions';
 import BoardIndex from './board_index';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUserId = state.session.currentUser.id;
-  const board = state.entities.boards.board;
+  const userBoards = values(state.entities.boards.userBoards);
+  const userId = ownProps.match.params.userId;
   return ({
-    board,
+    userBoards,
     currentUserId,
+    userId,
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    createBoard: (currentUserId, board) => {
-      return dispatch(createBoard(currentUserId, board));
+    getUserBoards: (userId) => {
+      return dispatch(getUserBoards(userId));
     }
   });
 };

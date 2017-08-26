@@ -19,7 +19,7 @@ const App = (props) => {
         <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
         <Switch>
           <AuthRoute exact path="/login" component={SessionFormContainer} />
-          <Route path="/:userId" component={UserContainer} />
+          <Route exact path="/:userId" component={UserContainer} />
         </Switch>
       </div>
     </div>

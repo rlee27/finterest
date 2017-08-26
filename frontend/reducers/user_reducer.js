@@ -3,6 +3,7 @@ import { merge } from 'lodash';
 
 const defaultState = {
   user: {},
+  board_ids: [],
   errors: [],
 };
 

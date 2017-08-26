@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import User from './user';
 import { getUser } from '../../actions/user_actions';
 import { getUserBoards } from '../../actions/board_actions';
-import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   const user = state.entities.users.user;
+  const boards = state.entities.boards.userBoards;
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
+    boards,
     userId,
     user,
   };

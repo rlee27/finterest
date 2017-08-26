@@ -1,5 +1,6 @@
 import React from 'react';
 import NewBoardContainer from '../boards/new_board_container';
+import BoardIndexContainer from '../boards/board_index_container';
 
 class User extends React.Component {
   constructor(props) {
@@ -19,7 +20,10 @@ class User extends React.Component {
         <h2>
           This is the user's page who's email is {this.props.user.email}
         </h2>
-        <NewBoardContainer />
+        <div className="board-list">
+          <NewBoardContainer />
+          <BoardIndexContainer />
+        </div>
       </div>
     );
   }
