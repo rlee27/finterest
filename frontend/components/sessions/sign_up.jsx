@@ -115,6 +115,7 @@ class SignUp extends React.Component {
           <div>
             <header className="login-header">
               {this.loginButton()}
+              {this.demoButton()}
             </header>
             <div className="form-container">
               <AdditionalFields
