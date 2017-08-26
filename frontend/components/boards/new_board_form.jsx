@@ -75,10 +75,10 @@ class NewBoardForm extends React.Component {
             <h3>Create Board</h3>
             <br />
             {this.renderErrors()}
-            <label htmlFor="title">Title</label>
             <input
               type="text" value={this.state.title}
-              onChange={this.update('title')} />
+              onChange={this.update('title')}
+              placeholder="Title" />
           </form>
           <br />
           <div className="board-form-buttons">
