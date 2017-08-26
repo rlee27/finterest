@@ -16,10 +16,10 @@ const BoardReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_USER_BOARDS:
-      nextState = merge({}, state, {userBoards: action.userBoards});
+      nextState = merge({}, {userBoards: action.userBoards});
       return nextState;
     case RECEIVE_A_BOARD:
-      nextState = merge({}, state, {board: action.board});
+      nextState = merge({}, {board: action.board});
       return nextState;
     case RECEIVE_ERRORS:
       nextState = merge({}, state, {errors: action.errors});

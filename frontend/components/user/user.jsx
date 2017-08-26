@@ -14,6 +14,15 @@ class User extends React.Component {
       });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params !== nextProps.match.params) {
+      this.props.getUser(this.props.userId)
+        .then((user) => {
+          return this.props.getUserBoards(this.props.userId);
+        });
+    }
+  }
+
   render(){
     return(
       <div>
