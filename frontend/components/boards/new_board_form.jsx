@@ -30,6 +30,7 @@ class NewBoardForm extends React.Component {
 
   closeModal() {
     this.setState({ modalOpen: false });
+    return this.props.clearErrors();
   }
 
   openModal() {

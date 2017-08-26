@@ -25,7 +25,7 @@ const BoardReducer = (state = defaultState, action) => {
       nextState = merge({}, state, {errors: action.errors});
       return nextState;
     case CLEAR_ERRORS:
-      nextState = merge({}, state, {errors: []});
+      nextState = Object.assign({}, state, {errors: []});
       return nextState;
     default:
       return state;
