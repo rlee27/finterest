@@ -15,8 +15,6 @@ const style = {
     left            : 'unset',
     right           : 'unset',
     bottom          : 'unset',
-    height          : '200px',
-    width           : '150px',
     border          : '1px solid #ccc',
     zIndex          : 800,
     backgroundColor : '#74D6FF',
