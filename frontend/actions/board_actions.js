@@ -40,7 +40,7 @@ export const getUserBoards = (userId) => {
         return dispatch(receiveAllBoards(userBoards));
       },
       (errors) => {
-        return dispatch(receiveErrors(errors));
+        return dispatch(receiveErrors(errors.responseJSON));
       });
   };
 };
@@ -52,7 +52,7 @@ export const getABoard = (userId, boardTitle) => {
         return dispatch(receiveABoard(board));
       },
       (errors) => {
-        return dispatch(receiveErrors(errors));
+        return dispatch(receiveErrors(errors.responseJSON));
       });
   };
 };
@@ -64,7 +64,7 @@ export const createBoard = (userId, board) => {
         return dispatch(receiveABoard(board));
       },
       (errors) => {
-        return dispatch(receiveErrors(errors));
+        return dispatch(receiveErrors(errors.responseJSON));
       });
   };
 };
