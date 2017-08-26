@@ -9,9 +9,11 @@ class BoardIndex extends React.Component {
     this.boardDetails = this.boardDetails.bind(this);
   }
 
-  componentDidMount() {
-    return this.props.getUserBoards(this.props.userId);
-  }
+  // componentDidMount() {
+  //   return this.props.getUserBoards(this.props.userId);
+  // }
+  // Commented out for now.. to prevent unnecessary database calls
+  // May have to do something with this in the future
 
   boardDetails() {
     return (this.props.userBoards.map((board) => {
