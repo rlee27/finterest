@@ -35,7 +35,7 @@ class NewBoardForm extends React.Component {
 
   openModal() {
     this.setState({ modalOpen: true });
-    return this.props.clearErrors;
+    return this.props.clearErrors();
   }
 
   // componentDidMount() {
