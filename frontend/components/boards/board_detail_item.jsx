@@ -10,22 +10,25 @@ class BoardDetailItem extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (
       Object.keys(this.props.userBoards).length !==
-      Object.keys(nextProps.userBoards).length
-    ) {
+      Object.keys(nextProps.userBoards).length) {
         this.props.history.push(`/${this.props.userId}`);
     }
   }
 
   render() {
-    return(
-      <div>
-        <header>
-          <EditBoardContiner />
-        </header>
-        <h1>{this.props.board.title}</h1>
+    if (this.props.board) {
+      return(
+        <div>
+          <header>
+            <EditBoardContiner />
+          </header>
+          <h1>{this.props.board.title}</h1>
 
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 

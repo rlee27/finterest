@@ -46,7 +46,7 @@ class NewBoardForm extends React.Component {
     this.props.createBoard(this.props.author_id, board)
     .then(() => {
       const urlPath = this.state.title.split(" ").join("-");
-      this.props.history.push(`${this.state.author_id}/${urlPath}`);
+      this.props.history.push(`/${this.state.author_id}/${urlPath}`);
     });
   }
 
