@@ -11,12 +11,12 @@
 class Topic < ApplicationRecord
   validates :name, presence: true
 
-  belongs_to :boards,
+  has_many :boards,
     class_name: :Board,
     primary_key: :id,
     foreign_key: :topic_id
 
-  belongs_to :pins,
+  has_many :pins,
     class_name: :Pin,
     primary_key: :id,
     foreign_key: :topic_id
