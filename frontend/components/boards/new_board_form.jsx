@@ -40,10 +40,6 @@ class NewBoardForm extends React.Component {
     return this.props.clearErrors();
   }
 
-  // componentDidMount() {
-  //   return this.props.clearErrors();
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     const board = Object.assign({}, this.state);

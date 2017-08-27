@@ -7,6 +7,15 @@ class BoardDetailItem extends React.Component {
     return this.props.getABoard(this.props.userId, this.props.boardTitle);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (
+      Object.keys(this.props.userBoards).length !==
+      Object.keys(nextProps.userBoards).length
+    ) {
+        this.props.history.push(`/${this.props.userId}`);
+    }
+  }
+
   render() {
     return(
       <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editBoard, clearErrors } from '../../actions/board_actions';
+import { editBoard, clearErrors, destroyBoard } from '../../actions/board_actions';
 import EditBoardForm from './edit_board_form';
 
 const mapStateToProps = (state) => {
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     clearErrors: () => {
       return dispatch(clearErrors());
+    },
+    destroyBoard: (userId, boardId) => {
+      return dispatch(destroyBoard(userId, boardId));
     }
   });
 };

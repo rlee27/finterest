@@ -15,6 +15,7 @@ class EditBoardForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteAndRedirect = this.deleteAndRedirect.bind(this);
   }
 
   renderErrors() {
@@ -53,6 +54,11 @@ class EditBoardForm extends React.Component {
     };
   }
 
+  deleteAndRedirect() {
+    this.closeModal();
+    this.props.destroyBoard(this.props.userId, this.props.board.id);
+  }
+
   render() {
     return(
       <div>
@@ -86,7 +92,7 @@ class EditBoardForm extends React.Component {
           {this.renderErrors()}
           <div className="board-form-buttons">
             <button className="basic-button"
-              onClick={this.props.deleteBoard}>
+              onClick={this.deleteAndRedirect}>
               Delete Board
             </button>
             <button className="basic-button"
