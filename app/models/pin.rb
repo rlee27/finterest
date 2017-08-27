@@ -14,5 +14,12 @@
 class Pin < ApplicationRecord
   validates :pin_url, :author, :board, presence: true
 
-  
+  belongs_to :board,
+    class_name: :Board,
+    primary_key: :id,
+    foreign_key: :board_id
+
+  has_many :boards,
+    through: :fins,
+    source: :boardxs
 end

@@ -19,4 +19,8 @@ class Board < ApplicationRecord
     class_name: :User,
     primary_key: :id,
     foreign_key: :author_id
+
+  has_many :pins
+    through: :fins,
+    source: :pin
 end
