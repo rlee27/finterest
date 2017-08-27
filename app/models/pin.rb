@@ -9,6 +9,7 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  topic_id    :integer
 #
 
 class Pin < ApplicationRecord
@@ -24,6 +25,11 @@ class Pin < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id
 
+  belongs_to :topic,
+    class_name: :Topic,
+    primary_key: :id,
+    foreign_key: :topic_id
+
   has_many :fins,
     class_name: :Fin,
     primary_key: :id,
@@ -32,5 +38,5 @@ class Pin < ApplicationRecord
 
   has_many :boards,
     through: :fins,
-    source: :boardxs
+    source: :boards
 end

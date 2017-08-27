@@ -1,15 +1,11 @@
 # == Schema Information
 #
-# Table name: pins
+# Table name: topics
 #
-#  id          :integer          not null, primary key
-#  pin_url     :string           not null
-#  author_id   :integer          not null
-#  board_id    :integer          not null
-#  description :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  topic_id    :integer
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
