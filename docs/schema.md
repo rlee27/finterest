@@ -20,7 +20,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 description       | text    |
-pin_origin | string | not null
+pin_url | string | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 board_id | integer   | not null, foreign key (references board), indexed
 
