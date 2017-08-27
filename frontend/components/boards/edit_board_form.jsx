@@ -85,8 +85,18 @@ class EditBoardForm extends React.Component {
           <br />
           {this.renderErrors()}
           <div className="board-form-buttons">
-            <button className="basic-button" onClick={this.closeModal}>Cancel</button>
-            <button className="basic-button" onClick={this.handleSubmit}>Save</button>
+            <button className="basic-button"
+              onClick={this.props.deleteBoard}>
+              Delete Board
+            </button>
+            <button className="basic-button"
+              onClick={this.closeModal}>
+              Cancel
+            </button>
+            <button className="basic-button"
+              onClick={this.handleSubmit}>
+              Save
+            </button>
           </div>
         </Modal>
       </div>

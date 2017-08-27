@@ -27,3 +27,10 @@ export const editBoard = (userId, boardId, board) => {
     data: { board }
   });
 };
+
+export const destroyBoard = (userId, boardId) => {
+  return $.ajax({
+    url: `api/users/${userId}/boards/${boardId}`,
+    method: 'DELETE',
+  });
+};

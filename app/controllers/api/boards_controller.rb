@@ -35,7 +35,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find(params[:id])
+    @board = User.find(params[:userId]).boards.find(params[:boardId])
     if @board
       @board.destroy
       render :show

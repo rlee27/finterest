@@ -4,13 +4,14 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create, :destroy, :show] do
       member do
-        resources :boards, except: [:edit, :new, :show, :update]
+        resources :boards, except: [:edit, :new, :show, :update, :destroy]
       end
     end
 
     post '/users/submit', to: 'users#submit'
     get '/users/:userId/boards/:boardTitle', to: 'boards#show'
     patch '/users/:userId/boards/:boardId', to: 'boards#update'
+    delete '/users/:userId/boards/:boardId', to: 'boards#destroy'
 
     resource :sessions, only: [:create, :destroy]
   end

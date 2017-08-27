@@ -3,6 +3,7 @@ export const RECEIVE_ALL_USER_BOARDS = "RECEIVE_ALL_USER_BOARDS";
 export const RECEIVE_A_BOARD = "RECEIVE_A_BOARD";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const DELETE_BOARD = 'DELETE_BOARD';
 
 export const receiveAllBoards = (userBoards) => {
   return({
@@ -14,6 +15,13 @@ export const receiveAllBoards = (userBoards) => {
 export const receiveABoard = (board) => {
   return({
     type: RECEIVE_A_BOARD,
+    board,
+  });
+};
+
+export const deleteBoard = (board) => {
+  return({
+    type: DELETE_BOARD,
     board,
   });
 };
@@ -74,6 +82,18 @@ export const editBoard = (userId, boardId, board) => {
     return BoardAPIUtil.editBoard(userId, boardId, board)
       .then((board) => {
         return dispatch(receiveABoard(board));
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+      });
+  };
+};
+
+export const destroyBoard = (userId, boardId) => {
+  return (dispatch) => {
+    return BoardAPIUtil.destroyBoard(userId, boardId)
+      .then((board) => {
+        return dispatch(deleteBoard(board));
       },
       (errors) => {
         return dispatch(receiveErrors(errors.responseJSON));

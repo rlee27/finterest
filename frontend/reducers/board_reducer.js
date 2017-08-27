@@ -2,8 +2,9 @@ import {
   RECEIVE_ALL_USER_BOARDS,
   RECEIVE_A_BOARD,
   CLEAR_ERRORS,
-  RECEIVE_ERRORS } from '../actions/board_actions';
-import { merge } from 'lodash';
+  RECEIVE_ERRORS,
+  DELETE_BOARD } from '../actions/board_actions';
+import { merge, values, omit } from 'lodash';
 
 const defaultState = {
   userBoards: {},
@@ -26,6 +27,10 @@ const BoardReducer = (state = defaultState, action) => {
       return nextState;
     case CLEAR_ERRORS:
       nextState = Object.assign({}, state, {errors: []});
+      return nextState;
+    case DELETE_BOARD:
+      const withoutBoard = omit(state.userBoards, [action.board.id]);
+      nextState = merge({}, {userBoards: withoutBoard});
       return nextState;
     default:
       return state;

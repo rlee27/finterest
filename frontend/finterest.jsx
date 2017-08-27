@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { submit } from './util/session_api_util';
 import Modal from 'react-modal';
+import { destroyBoard } from './actions/board_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.submit = submit;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.destroyBoard = destroyBoard;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);
 });
