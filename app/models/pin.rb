@@ -23,7 +23,7 @@ class Pin < ApplicationRecord
   belongs_to :author,
     class_name: :User,
     primary_key: :id,
-    foreign_key: :user_id
+    foreign_key: :author_id
 
   belongs_to :topic,
     class_name: :Topic,
