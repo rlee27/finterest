@@ -1,5 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
+import EditBoardContiner from './edit_board_container';
 
 class BoardDetailItem extends React.Component {
   componentDidMount() {
@@ -8,7 +9,13 @@ class BoardDetailItem extends React.Component {
 
   render() {
     return(
-      <h1>{this.props.board.title}</h1>
+      <div>
+        <header>
+          <EditBoardContiner />
+        </header>
+        <h1>{this.props.board.title}</h1>
+
+      </div>
     );
   }
 }

@@ -19,3 +19,11 @@ export const createBoard = (userId, board) => {
     data: { board }
   });
 };
+
+export const editBoard = (userId, boardId, board) => {
+  return $.ajax({
+    url: `api/users/${userId}/boards/${boardId}`,
+    method: 'PATCH',
+    data: { board }
+  });
+};

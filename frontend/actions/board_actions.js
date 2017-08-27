@@ -68,3 +68,15 @@ export const createBoard = (userId, board) => {
       });
   };
 };
+
+export const editBoard = (userId, boardId, board) => {
+  return (dispatch) => {
+    return BoardAPIUtil.editBoard(userId, boardId, board)
+      .then((board) => {
+        return dispatch(receiveABoard(board));
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+      });
+  };
+};

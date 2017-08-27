@@ -1,18 +1,17 @@
 import React from 'react';
-import { merge } from 'lodash';
 import Modal from 'react-modal';
+import { merge } from 'lodash';
 import newBoardStyle from './new_board_style';
 
-class NewBoardForm extends React.Component {
+class EditBoardForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       title: "",
-      author_id: this.props.currentUserId,
+      description: "",
       modalOpen: false,
     };
-
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,18 +37,12 @@ class NewBoardForm extends React.Component {
     return this.props.clearErrors();
   }
 
-  // componentDidMount() {
-  //   return this.props.clearErrors();
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
-    const board = Object.assign({}, this.state);
-    this.props.createBoard(this.props.author_id, board)
-    .then(() => {
-      const urlPath = this.state.title.split(" ").join("-");
-      this.props.history.push(`${this.state.author_id}/${urlPath}`);
-    });
+    const { title, description } = this.state;
+    const board = merge({}, this.props.board, {title, description});
+    this.props.editBoard(this.props.userId, this.props.board.id, board);
+    this.closeModal();
   }
 
   update(field) {
@@ -64,7 +57,7 @@ class NewBoardForm extends React.Component {
     return(
       <div>
         <button className="create-board-button" onClick={this.openModal}>
-          Create Board 🗓
+          🖊
         </button>
         <Modal
           isOpen={this.state.modalOpen}
@@ -73,21 +66,27 @@ class NewBoardForm extends React.Component {
           contentLabel='sans-serif'>
 
           <form onSubmit={this.handleSubmit}>
-            <h3>Create Board</h3>
-            <div className="form-content">
-              <label htmlFor="title">Title</label>
-              <input
-                type="text" value={this.state.title}
-                onChange={this.update('title')}
-                placeholder="Title"
-                className="form-input-field"/>
-            </div>
-            {this.renderErrors()}
+            <h3>Edit your Board</h3>
+            <p>{this.props.board.title}</p>
+            <br />
+            <label htmlFor="title">Title</label>
+            <input
+              type="text"
+              defaultValue={this.props.board.title}
+              onChange={this.update('title')}
+              placeholder="Title" />
+            <br />
+            <label htmlFor="description">Description</label>
+            <textarea defaultValue={this.props.board.description}
+              onChange={this.update('description')}
+              placeholder="What is your board about?">
+            </textarea>
           </form>
           <br />
+          {this.renderErrors()}
           <div className="board-form-buttons">
             <button className="basic-button" onClick={this.closeModal}>Cancel</button>
-            <button className="basic-button" onClick={this.handleSubmit}>Create</button>
+            <button className="basic-button" onClick={this.handleSubmit}>Save</button>
           </div>
         </Modal>
       </div>
@@ -95,4 +94,4 @@ class NewBoardForm extends React.Component {
   }
 }
 
-export default NewBoardForm;
+export default EditBoardForm;
