@@ -20,7 +20,13 @@ class Board < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id
 
-  has_many :pins
+  has_many :fins,
+    class_name: :Fin,
+    primary_key: :id,
+    foreign_key: :board_id,
+    dependent: :destroy
+
+  has_many :pins,
     through: :fins,
     source: :pin
 end

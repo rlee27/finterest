@@ -19,6 +19,17 @@ class Pin < ApplicationRecord
     primary_key: :id,
     foreign_key: :board_id
 
+  belongs_to :author,
+    class_name: :User,
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :fins,
+    class_name: :Fin,
+    primary_key: :id,
+    foreign_key: :pin_id,
+    dependent: :destroy
+
   has_many :boards,
     through: :fins,
     source: :boardxs
