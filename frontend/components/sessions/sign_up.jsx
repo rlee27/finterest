@@ -132,7 +132,7 @@ class SignUp extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="signup-component">
         <BackgroundImage />
         {this.renderForm()}
       </div>
