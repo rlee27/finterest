@@ -27,6 +27,12 @@ class User < ApplicationRecord
   has_many :boards,
     class_name: :Board,
     primary_key: :id,
+    foreign_key: :author_id,
+    dependent: :destroy
+
+  has_many :pins,
+    class_name: :Pin,
+    primary_key: :id,
     foreign_key: :author_id
 
   def self.generate_session_token

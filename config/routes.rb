@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :destroy, :show] do
       member do
         resources :boards, except: [:edit, :new, :show, :update, :destroy]
+        resources :pins, only: [:index, :create]
+        resources :fins, only: [:index]
       end
     end
 
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
     get '/users/:userId/boards/:boardTitle', to: 'boards#show'
     patch '/users/:userId/boards/:boardId', to: 'boards#update'
     delete '/users/:userId/boards/:boardId', to: 'boards#destroy'
+
+    resources :pins, except: [:index, :new, :edit, :create]
 
     resource :sessions, only: [:create, :destroy]
   end

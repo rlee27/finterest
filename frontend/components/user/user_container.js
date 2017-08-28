@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import User from './user';
 import { getUser } from '../../actions/user_actions';
 import { getUserBoards } from '../../actions/board_actions';
+import { getUserPins } from '../../actions/pin_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
@@ -25,6 +26,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     getUserBoards: (userId) => {
       return dispatch(getUserBoards(userId));
+    },
+    getUserPins: (userId) => {
+      return dispatch(getUserPins(userId));
     },
   });
 };
