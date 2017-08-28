@@ -14,6 +14,9 @@ class User extends React.Component {
     this.props.getUser(this.props.userId)
       .then((user) => {
         return this.props.getUserBoards(this.props.userId);
+      })
+      .then(() => {
+        return this.props.getUserPins(this.props.userId);
       });
   }
 
