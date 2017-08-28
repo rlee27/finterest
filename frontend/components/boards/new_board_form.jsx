@@ -60,35 +60,42 @@ class NewBoardForm extends React.Component {
 
   render() {
     return(
-      <div>
-        <button className="create-board-button" onClick={this.openModal}>
-          Create Board 🗓
-        </button>
-        <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.closeModal}
-          style={newBoardStyle}
-          contentLabel='sans-serif'>
-
-          <form onSubmit={this.handleSubmit}>
-            <h3>Create Board</h3>
-            <div className="form-content">
-              <label htmlFor="title">Title</label>
-              <input
-                type="text" value={this.state.title}
-                onChange={this.update('title')}
-                placeholder="Title"
-                className="form-input-field"/>
+      <button onClick={this.openModal} className="new-board-button">
+        <div className="board-card">
+          <div className="add-board-box">
+            <div className="plus">
+              ✚
             </div>
-            {this.renderErrors()}
-          </form>
-          <br />
-          <div className="board-form-buttons">
-            <button className="basic-button" onClick={this.closeModal}>Cancel</button>
-            <button className="basic-button" onClick={this.handleSubmit}>Create</button>
           </div>
-        </Modal>
-      </div>
+          <h3 className="create-board-text">
+            Create Board
+          </h3>
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
+            style={newBoardStyle}
+            contentLabel='sans-serif'>
+
+            <form onSubmit={this.handleSubmit}>
+              <h3>Create Board</h3>
+              <div className="form-content">
+                <label htmlFor="title">Title</label>
+                <input
+                  type="text" value={this.state.title}
+                  onChange={this.update('title')}
+                  placeholder="Title"
+                  className="form-input-field"/>
+              </div>
+              {this.renderErrors()}
+            </form>
+            <br />
+            <div className="board-form-buttons">
+              <button className="basic-button" onClick={this.closeModal}>Cancel</button>
+              <button className="basic-button" onClick={this.handleSubmit}>Create</button>
+            </div>
+          </Modal>
+        </div>
+      </button>
     );
   }
 }

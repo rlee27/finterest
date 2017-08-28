@@ -58,9 +58,7 @@ class BoardIndex extends React.Component {
   render() {
     return (
       <ul className="board-index">
-        <li>
-          {this.protectBoardCreate()}
-        </li>
+        {this.protectBoardCreate()}
         {this.boardDetails()}
       </ul>
     );

@@ -14,8 +14,17 @@
  *= require_self
  */
 
+html {
+  background-color: #74D6FF;
+}
+
 main {
   background-color: #74D6FF;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 .main-content > * {
