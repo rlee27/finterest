@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PinIndex from './pin_index';
+import { createPin } from '../../actions/pin_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -12,7 +13,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return({
-
+    createPin: (pin) => {
+      return dispatch(createPin(pin));
+    }
   });
 };
 
