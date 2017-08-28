@@ -75,25 +75,32 @@ class EditBoardForm extends React.Component {
           contentLabel='sans-serif'>
 
           <form onSubmit={this.handleSubmit}>
-            <h3 className="create-board-text">Edit your Board</h3>
-            <p>{this.props.board.title}</p>
-            <br />
+            <h3 className="create-board-text">
+              Edit:
+              <br />
+              <p className="board-title">{this.props.board.title}</p>
+            </h3>
+            <hr className="line-break" />
             <div className="form-content">
               <label htmlFor="title">Title</label>
               <input
                 type="text"
                 defaultValue={this.props.board.title}
                 onChange={this.update('title')}
-                placeholder="Title" />
+                placeholder="Title"
+                className="form-input-field" />
             </div>
-            <br />
-            <label htmlFor="description">Description</label>
-            <textarea defaultValue={this.props.board.description}
-              onChange={this.update('description')}
-              placeholder="What is your board about?">
-            </textarea>
+            <hr className="line-break" />
+            <div className="form-content">
+              <label htmlFor="description">Description</label>
+              <textarea defaultValue={this.props.board.description}
+                onChange={this.update('description')}
+                placeholder="What is your board about?"
+                className="form-input-field">
+              </textarea>
+            </div>
           </form>
-          <br />
+          <hr className="line-break" />
           {this.renderErrors()}
           <div className="board-form-buttons">
             <button className="basic-button"

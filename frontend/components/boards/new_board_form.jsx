@@ -78,6 +78,7 @@ class NewBoardForm extends React.Component {
 
             <form onSubmit={this.handleSubmit}>
               <h3>Create Board</h3>
+              <hr className="line-break" />
               <div className="form-content">
                 <label htmlFor="title">Title</label>
                 <input
@@ -88,7 +89,7 @@ class NewBoardForm extends React.Component {
               </div>
               {this.renderErrors()}
             </form>
-            <br />
+            <hr className="line-break" />
             <div className="board-form-buttons">
               <button className="basic-button" onClick={this.closeModal}>Cancel</button>
               <button className="basic-button" onClick={this.handleSubmit}>Create</button>

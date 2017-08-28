@@ -5,10 +5,57 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5px;
 }
 
 .form-input-field {
   width: 60%;
   height: 80%;
   font-size: 100%;
+}
+
+.create-board-text {
+  align-self: flex-start;
+  font-size: 16px;
+  padding-top: 10px;
+  color: white;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.board-form-buttons {
+  align-self: flex-end;
+}
+
+input {
+  border: 1px solid #007EB2;
+}
+
+.edit-board-button {
+  height: 48px;
+  width: 48px;
+}
+
+.edit-board-button:hover {
+  background-color: #007EB2;
+  border-radius: 50px;
+}
+
+.edit-board-button:active {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #007EB2;
+}
+
+.line-break {
+  border: 1px solid #007EB2;
+  width: 100%
+}
+
+textarea.form-input-field {
+  resize: none;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.board-title {
+  color: #007EB2;
 }
