@@ -1,6 +1,7 @@
 import React from 'react';
 import { values } from 'lodash';
 import { Link } from 'react-router-dom';
+import NewBoardContainer from './new_board_container';
 
 class BoardIndex extends React.Component {
   constructor(props) {
@@ -29,9 +30,20 @@ class BoardIndex extends React.Component {
     }));
   }
 
+  protectBoardCreate() {
+    if (this.props.currentUserId === parseInt(this.props.userId)) {
+      return <NewBoardContainer />;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <ul className="board-index">
+        <li>
+          {this.protectBoardCreate()}
+        </li>
         {this.boardDetails()}
       </ul>
     );
