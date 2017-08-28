@@ -18,12 +18,13 @@ class BoardIndex extends React.Component {
   boardDetails() {
     return (this.props.userBoards.map((board) => {
       return(
-        <li key={board.id}>
-          <Link to={`/${this.props.userId}/${board.title.split(" ").join("-")}`}>
-            <button>
+        <li key={board.id} className="board-list-item">
+          <button className="board-button">
+            <Link to={`/${this.props.userId}/${board.title.split(" ").join("-")}`}
+            className="board-card">
                 {board.title}
-            </button>
-          </Link>
+            </Link>
+          </button>
         </li>
       );
     }));

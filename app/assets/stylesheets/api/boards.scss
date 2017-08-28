@@ -1,3 +1,33 @@
 // Place all the styles related to the api/boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.board-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.board-list-item {
+  margin: 5px;
+  width: 300px;
+  height: 270px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+}
+
+.board-button {
+  width: 80%;
+}
+
+.board-card {
+  color: blue;
+  background-color: red;
+  box-sizing: inherit;
+  padding: inherit;
+  border-width: inherit;
+  border-style: none;
+  border-color: none;
+  width: 100%;
+  height: 80%;
+}
