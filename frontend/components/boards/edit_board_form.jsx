@@ -56,13 +56,16 @@ class EditBoardForm extends React.Component {
 
   deleteAndRedirect() {
     this.closeModal();
-    this.props.destroyBoard(this.props.userId, this.props.board.id);
+    this.props.destroyBoard(this.props.userId, this.props.board.id)
+      .then((res) => {
+        return this.props.history.push(`/${this.props.userId}`);
+      });
   }
 
   render() {
     return(
       <div>
-        <button className="create-board-button" onClick={this.openModal}>
+        <button className="edit-board-button" onClick={this.openModal}>
           🖊
         </button>
         <Modal
@@ -72,15 +75,17 @@ class EditBoardForm extends React.Component {
           contentLabel='sans-serif'>
 
           <form onSubmit={this.handleSubmit}>
-            <h3>Edit your Board</h3>
+            <h3 className="create-board-text">Edit your Board</h3>
             <p>{this.props.board.title}</p>
             <br />
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              defaultValue={this.props.board.title}
-              onChange={this.update('title')}
-              placeholder="Title" />
+            <div className="form-content">
+              <label htmlFor="title">Title</label>
+              <input
+                type="text"
+                defaultValue={this.props.board.title}
+                onChange={this.update('title')}
+                placeholder="Title" />
+            </div>
             <br />
             <label htmlFor="description">Description</label>
             <textarea defaultValue={this.props.board.description}

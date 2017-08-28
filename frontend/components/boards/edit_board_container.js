@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { editBoard, clearErrors, destroyBoard } from '../../actions/board_actions';
 import EditBoardForm from './edit_board_form';
 
@@ -25,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditBoardForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditBoardForm));

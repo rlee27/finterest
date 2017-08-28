@@ -15,9 +15,15 @@ const style = {
     left            : 'unset',
     right           : 'unset',
     bottom          : 'unset',
-    border          : '1px solid #ccc',
+    border          : '1px solid #007EB2',
     zIndex          : 800,
     backgroundColor : '#74D6FF',
+    fontFamily      : "'Droid Sans', sans-serif",
+    fontSize        : '16px',
+    display         : 'flex',
+    flexDirection   : 'column',
+    color           : 'white',
+    fontWeight      : '700',
   }
 };
 
