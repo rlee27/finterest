@@ -8,7 +8,7 @@ class BoardDetailItem extends React.Component {
   }
 
   protectedEdit() {
-    if (this.props.currentUser.id === this.props.userId) {
+    if (this.props.currentUser.id === parseInt(this.props.userId)) {
       return <EditBoardContiner />;
     } else {
       return null;
