@@ -5,16 +5,18 @@ import BoardDetailItem from './board_detail_item';
 import { selectBoard } from '../../reducers/selectors';
 import { getABoard, getUserBoards, destroyBoard } from '../../actions/board_actions';
 
-const mapStateToProps= ({ entities: { boards } } , { match: { params } }) => {
+const mapStateToProps= ({ entities: { boards }, session } , { match: { params } }) => {
   const board = boards.board;
   const userId = params.userId;
   const boardTitle = params.boardTitle;
   const userBoards = boards.userBoards;
+  const currentUser = session.currentUser;
   return ({
     board,
     userBoards,
     userId,
-    boardTitle
+    boardTitle,
+    currentUser,
   });
 };
 

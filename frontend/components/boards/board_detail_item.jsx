@@ -7,12 +7,20 @@ class BoardDetailItem extends React.Component {
     return this.props.getABoard(this.props.userId, this.props.boardTitle);
   }
 
+  protectedEdit() {
+    if (this.props.currentUser.id === this.props.userId) {
+      return <EditBoardContiner />;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     if (this.props.board) {
       return(
         <div>
           <header>
-            <EditBoardContiner />
+            {this.protectedEdit()}
           </header>
           <h1>{this.props.board.title}</h1>
 
