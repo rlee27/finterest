@@ -1,7 +1,10 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import NewBoardContainer from '../boards/new_board_container';
 import BoardIndexContainer from '../boards/board_index_container';
+import PinIndexContainer from '../pins/pin_index_container';
 import UserDetailContainer from './user_detail_container';
+
 
 class User extends React.Component {
   constructor(props) {
@@ -46,7 +49,9 @@ class User extends React.Component {
         {this.checkUser()}
         <div className="board-list">
           {this.protectBoardCreate()}
-          <BoardIndexContainer />
+          <Route exact path="/:userId" component={BoardIndexContainer} />
+          <Route path="/:userId/boards" component={BoardIndexContainer} />
+          <Route path="/:userId/pins" component={PinIndexContainer} />
         </div>
       </div>
     );

@@ -16,10 +16,12 @@ const App = (props) => {
 
       <div className="main-content">
         <ProtectedHomeRoute path="/" component={HomepageContainer} />
-        <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
         <Switch>
           <AuthRoute exact path="/login" component={SessionFormContainer} />
           <Route exact path="/:userId" component={UserContainer} />
+          <Route path="/:userId/boards" component={UserContainer} />
+          <Route path="/:userId/pins" component={UserContainer} />
+          <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
         </Switch>
       </div>
     </div>
