@@ -18,10 +18,10 @@ const App = (props) => {
         <ProtectedHomeRoute path="/" component={HomepageContainer} />
         <Switch>
           <AuthRoute exact path="/login" component={SessionFormContainer} />
-          <Route exact path="/:userId" component={UserContainer} />
-          <Route path="/:userId/boards" component={UserContainer} />
-          <Route path="/:userId/pins" component={UserContainer} />
-          <Route path="/:userId/:boardTitle" component={BoardDetailContainer} />
+          <ProtectedRoute exact path="/:userId" component={UserContainer} />
+          <ProtectedRoute path="/:userId/boards" component={UserContainer} />
+          <ProtectedRoute path="/:userId/pins" component={UserContainer} />
+          <ProtectedRoute path="/:userId/:boardTitle" component={BoardDetailContainer} />
         </Switch>
       </div>
     </div>

@@ -4,22 +4,17 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.logout = this.logout.bind(this);
     this.goHome = this.goHome.bind(this);
     this.toShow = this.toShow.bind(this);
   }
 
-  logout() {
-    this.props.logout();
-  }
-
   toShow() {
-    this.props.history.push(`/${this.props.currentUser.id}`);
+    return this.props.history.push(`/${this.props.currentUser.id}`);
   }
 
   goHome() {
     if (!(this.props.location.pathname === "/")) {
-      this.props.history.push("/");
+      return this.props.history.push("/");
     } else {
 
     }
@@ -58,7 +53,7 @@ class NavBar extends React.Component {
               </button>
             </li>
             <li>
-              <button className="nav-button" onClick={this.logout}>
+              <button className="nav-button" onClick={this.props.logout}>
                 Log Out
               </button>
             </li>

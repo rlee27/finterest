@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import NavBar from './navbar';
 import { withRouter } from 'react-router-dom';
-
 import { selectUserName } from '../../reducers/selectors';
 import { logout } from '../../actions/session_actions';
 
