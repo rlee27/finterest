@@ -3,7 +3,7 @@ class Api::PinsController < ApplicationController
     user = User.find(params[:id])
     @pins = user.pins
     if user
-      render :show
+      render :index
     else
       render json:
       ["User does not exist,
@@ -21,6 +21,7 @@ class Api::PinsController < ApplicationController
   end
 
   def create
+    debugger
     @pin = Pin.new(pin_params)
     if @pin.save
       render :show
