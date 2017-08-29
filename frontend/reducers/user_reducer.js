@@ -12,10 +12,10 @@ const UserReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      nextState = merge({}, defaultState, {user: action.user});
+      nextState = merge({}, state, {user: action.payload.user});
       return nextState;
     case RECEIVE_ERRORS:
-      nextState = merge({}, defaultState, {errors: action.errors});
+      nextState = merge({}, state, {errors: action.payload.user.errors});
       return nextState;
     default:
       return state;

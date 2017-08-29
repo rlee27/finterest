@@ -15,6 +15,16 @@ class BoardDetailItem extends React.Component {
     }
   }
 
+  renderPins() {
+    return this.props.board.pin_ids.map((pinId) => {
+      return (
+        <li>
+          {pinId}
+        </li>
+      );
+    });
+  }
+
   render() {
     if (this.props.board) {
       return(
