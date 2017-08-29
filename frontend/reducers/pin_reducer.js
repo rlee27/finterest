@@ -18,7 +18,7 @@ const PinReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      nextState = merge({}, state, {userPins: action.payload.pins});
+      nextState = Object.assign({}, state, {userPins: action.payload.pins});
       return nextState;
 
     case RECEIVE_USER_PINS:

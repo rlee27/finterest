@@ -4,13 +4,14 @@ import { withRouter } from 'react-router-dom';
 import { values } from 'lodash';
 import { getUserBoards } from '../../actions/board_actions';
 import BoardIndex from './board_index';
+import { selectUserBoards } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUserId = state.session.currentUser.id;
-  const userBoards = values(state.entities.boards.userBoards);
   const userId = ownProps.match.params.userId;
+  const user = state.entities.users.user;
   return ({
-    userBoards,
+    userBoards: selectUserBoards(state, user),
     currentUserId,
     userId,
   });

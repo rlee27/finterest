@@ -10,10 +10,6 @@ export const selectUserName = ({ currentUser }) => {
   return name;
 };
 
-export const selectUserBoards = (state) => {
-  if (state.entities.boards.userBoards) {
-    return values(state.entities.boards.userBoards);
-  } else {
-    return []
-  }
+export const selectUserBoards = (state, user) => {
+  return user.board_ids ? user.board_ids.map(id => state.entities.boards.userBoards[id]) : []
 };
