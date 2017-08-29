@@ -6,6 +6,7 @@ import BoardDetailContainer from './boards/board_detail_container';
 import NavBarContainer from './navbar/navbar_container';
 import UserContainer from './user/user_container';
 import HomepageContainer from './homepage/homepage_container';
+import PinDetailContainer from './pins/pin_detail_container';
 
 const App = (props) => {
   return(
@@ -19,9 +20,10 @@ const App = (props) => {
         <Switch>
           <AuthRoute exact path="/login" component={SessionFormContainer} />
           <ProtectedRoute exact path="/:userId" component={UserContainer} />
-          <ProtectedRoute path="/:userId/boards" component={UserContainer} />
-          <ProtectedRoute path="/:userId/pins" component={UserContainer} />
-          <ProtectedRoute path="/:userId/:boardTitle" component={BoardDetailContainer} />
+          <ProtectedRoute exact path="/pins/:pinId" component={PinDetailContainer} />
+          <ProtectedRoute exact path="/:userId/boards" component={UserContainer} />
+          <ProtectedRoute exact path="/:userId/pins" component={UserContainer} />
+          <ProtectedRoute exact path="/:userId/:boardTitle" component={BoardDetailContainer} />
         </Switch>
       </div>
     </div>
