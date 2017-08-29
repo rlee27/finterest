@@ -7,8 +7,10 @@ class PinIndex extends React.Component {
     const allUserPins = values(this.props.userPins);
     return allUserPins.map((pin) => {
       return (
-        <li key={pin.id}>
-          {pin.image_url}
+        <li key={pin.id} className="board-card">
+          <div className="board-cover">
+            <img src={pin.image_url} />
+          </div>
         </li>
       );
     });
@@ -25,9 +27,9 @@ class PinIndex extends React.Component {
 
   render() {
     return (
-      <ul>
-        {this.pinList()}
+      <ul className="board-index">
         <NewPinContainer />
+        {this.pinList()}
       </ul>
     );
   }

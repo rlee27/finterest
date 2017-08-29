@@ -124,6 +124,9 @@ class NewPin extends React.Component {
               <input type="file" onChange={this.updateFile}/>
             </label>
           </form>
+          <br />
+          {this.renderErrors()}
+          <br />
           <div>
             <button onClick={this.closeModal}>Cancel</button>
             <button onClick={this.handleSubmit}>Create</button>
