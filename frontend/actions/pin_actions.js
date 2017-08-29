@@ -64,9 +64,9 @@ export const getPin = (pinId) => {
   };
 };
 
-export const createPin = (userId, pin) => {
+export const createPin = (userId, formData) => {
   return (dispatch) => {
-    return PinAPIUtil.createPin(userId, pin)
+    return PinAPIUtil.createPin(userId, formData)
       .then((pin) => {
         return dispatch(receivePin(pin));
       },

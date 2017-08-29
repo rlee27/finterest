@@ -12,11 +12,14 @@ export const getPin = (pinId) => {
   });
 };
 
-export const createPin = (userId, pin) => {
+export const createPin = (userId, formData) => {
   return $.ajax({
     url: `/api/users/${userId}/pins`,
     method: 'POST',
-    data: { pin },
+    dataType: 'json',
+    contentType: false,
+    processData: false,
+    data: formData,
   });
 };
 

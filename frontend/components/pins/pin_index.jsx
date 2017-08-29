@@ -1,5 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
+import NewPinContainer from './new_pin_container';
 
 class PinIndex extends React.Component {
   pinList() {
@@ -7,28 +8,26 @@ class PinIndex extends React.Component {
     return allUserPins.map((pin) => {
       return (
         <li key={pin.id}>
-          this will be a link to pin show.
+          {pin.image_url}
         </li>
       );
     });
   }
 
-  protectedPinCreate() {
-    if (this.props.currentUser.id === this.props.user.id) {
-      return (
-        <NewPinContainer />
-      );
-      // ????? does it need to be a container if it is just a form?
-    } else {
-      return null;
-    }
-  }
+  // protectedPinCreate() {
+  //   if (this.props.currentUser.id === this.props.user.id) {
+  //     return <NewPinContainer /> ;
+  //     // ????? does it need to be a container if it is just a form?
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   render() {
     return (
       <ul>
-        {this.protectedPinCreate()}
         {this.pinList()}
+        <NewPinContainer />
       </ul>
     );
   }
