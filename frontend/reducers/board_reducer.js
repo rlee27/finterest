@@ -18,7 +18,11 @@ const BoardReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      nextState = merge({}, state, {userBoards: action.payload.boards});
+      const userBoards = action.payload.boards.reduce((result, board) => {
+        result[board.id] = board;
+        return result;
+      }, {});
+      nextState = merge({}, state, {userBoards});
       return nextState;
 
     case RECEIVE_ALL_USER_BOARDS:
