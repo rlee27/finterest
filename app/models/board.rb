@@ -32,6 +32,7 @@ class Board < ApplicationRecord
     dependent: :destroy
 
   has_many :pins,
-    through: :fins,
-    source: :pin
+    class_name: :Pin,
+    primary_key: :id,
+    foreign_key: :board_id
 end
