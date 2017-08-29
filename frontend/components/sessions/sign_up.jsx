@@ -39,13 +39,17 @@ class SignUp extends React.Component {
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => {
-          return <li key={`error-${i}`} className="form-errors">{error}</li>;
-        })}
-      </ul>
-    );
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => {
+            return <li key={`error-${i}`} className="form-errors">{error}</li>;
+            })}
+          </ul>
+        );
+    } else {
+      return null;
+    }
   }
 
   handleSubmit(e) {
