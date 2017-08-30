@@ -22,7 +22,14 @@ class Api::PinsController < ApplicationController
 
   def create
     @pin = Pin.new(pin_params)
-    if @pin.save
+
+    pin_transaction = Pin.transaction do
+      @pin.save
+      fin = Fin.new(pin_id: @pin.id, board_id: @pin.board_id)
+      fin.save
+    end
+
+    if pin_transaction
       render :show
     else
       render json: @pin.errors.full_messages, status: 422
@@ -36,6 +43,10 @@ class Api::PinsController < ApplicationController
     else
       render json: @pin.errors.full_messages, status: 404
     end
+  end
+
+  def save_pin
+    @pin = Pin.find(params[:id])
   end
 
   def destroy
