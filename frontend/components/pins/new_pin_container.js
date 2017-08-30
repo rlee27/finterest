@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NewPin from './new_pin.jsx';
+import NewPinMulti from './new_pin_multi';
 import { createPin, clearErrors, receiveErrors } from '../../actions/pin_actions';
 import { getUserBoards } from '../../actions/board_actions';
 import { getTopics } from '../../actions/topic_actions';
@@ -35,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewPin);
+export default connect(mapStateToProps, mapDispatchToProps)(NewPinMulti);

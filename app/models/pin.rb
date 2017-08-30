@@ -27,7 +27,7 @@ class Pin < ApplicationRecord
   after_save :ensure_pin_url
 
 
-  def enusure_pin_url
+  def ensure_pin_url
     self.pin_url ||= self.image.url
   end
 
