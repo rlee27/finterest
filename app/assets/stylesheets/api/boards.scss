@@ -54,3 +54,11 @@
   height: 50px;
   width: 50px;
 }
+
+.board-card .edit-board-button {
+  display: none;
+}
+
+.board-card:hover .edit-board-button {
+  display: inline;
+}

@@ -37,7 +37,7 @@ input {
 }
 
 .edit-board-button:hover {
-  background-color: #007EB2;
+  background-color: rgba(0, 126, 178, 0.7);
   border-radius: 50px;
 }
 
@@ -63,4 +63,10 @@ textarea.form-input-field {
 .topic-selector {
   padding: 3px;
   margin: 10px;
+}
+
+.edit-button {
+  z-index: 1;
+  align-self: left;
+  position: absolute;
 }
