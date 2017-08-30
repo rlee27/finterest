@@ -24,19 +24,19 @@ class PinIndex extends React.Component {
     });
   }
 
-  // protectedPinCreate() {
-  //   if (this.props.currentUser.id === this.props.user.id) {
-  //     return <NewPinContainer /> ;
-  //     // ????? does it need to be a container if it is just a form?
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  protectedPinCreate() {
+    if (this.props.currentUser.id === this.props.user.id) {
+      return <NewPinContainer /> ;
+      // ????? does it need to be a container if it is just a form?
+    } else {
+      return null;
+    }
+  }
 
   render() {
     return (
       <ul className="board-index">
-        <NewPinContainer />
+        {this.protectedPinCreate()}
         {this.pinList()}
       </ul>
     );
