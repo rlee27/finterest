@@ -1,5 +1,5 @@
 import React from 'react';
-import { merge } from 'lodash';
+import { values } from 'lodash';
 import Modal from 'react-modal';
 import newBoardStyle from './new_board_style';
 
@@ -19,7 +19,7 @@ class NewBoardForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors) {
+    if (this.props.errors[0]) {
       return(
         <ul>
           {this.props.errors.map((error, i) => {
@@ -27,7 +27,17 @@ class NewBoardForm extends React.Component {
             })}
           </ul>
         );
+    } else {
+      return null;
     }
+  }
+
+  topicOptions() {
+    return values(topicNames).map((name, idx) => {
+      return(
+        <option key={idx} value={name}>{name}</option>
+      );
+    });
   }
 
   closeModal() {
@@ -78,6 +88,7 @@ class NewBoardForm extends React.Component {
 
             <form onSubmit={this.handleSubmit}>
               <h3>Create Board</h3>
+              {this.renderErrors()}
               <hr className="line-break" />
               <div className="form-content">
                 <label htmlFor="title">Title</label>
@@ -87,7 +98,14 @@ class NewBoardForm extends React.Component {
                   placeholder="Title"
                   className="form-input-field"/>
               </div>
-              {this.renderErrors()}
+              <hr className="line-break" />
+              <div className="form-content">
+                <select onChange={this.update('topic')}
+                  defaultValue="select topic">
+                  <option disabled value="select topic">Select Topic</option>
+                  {this.topicOptions()}
+                </select>
+              </div>
             </form>
             <hr className="line-break" />
             <div className="board-form-buttons">
