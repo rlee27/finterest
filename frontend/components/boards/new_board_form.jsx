@@ -11,11 +11,18 @@ class NewBoardForm extends React.Component {
       title: "",
       author_id: this.props.currentUserId,
       modalOpen: false,
+      topic_id: "",
     };
 
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (!this.props.topics) {
+      this.props.getTopics();
+    }
   }
 
   renderErrors() {
@@ -33,9 +40,9 @@ class NewBoardForm extends React.Component {
   }
 
   topicOptions() {
-    return values(topicNames).map((name, idx) => {
+    return values(this.props.topics).map((topic) => {
       return(
-        <option key={idx} value={name}>{name}</option>
+        <option key={topic.id} value={topic.id}>{topic.name}</option>
       );
     });
   }
@@ -100,8 +107,10 @@ class NewBoardForm extends React.Component {
               </div>
               <hr className="line-break" />
               <div className="form-content">
-                <select onChange={this.update('topic')}
-                  defaultValue="select topic">
+                <label htmlFor="topic">Topic</label>
+                <select onChange={this.update('topic_id')}
+                  defaultValue="select topic"
+                  className="topic-selector">
                   <option disabled value="select topic">Select Topic</option>
                   {this.topicOptions()}
                 </select>

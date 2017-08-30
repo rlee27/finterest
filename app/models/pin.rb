@@ -28,10 +28,10 @@ class Pin < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id
 
-  # belongs_to :topic,
-  #   class_name: :Topic,
-  #   primary_key: :id,
-  #   foreign_key: :topic_id
+  belongs_to :topic,
+    class_name: :Topic,
+    primary_key: :id,
+    foreign_key: :topic_id
 
   has_many :fins,
     class_name: :Fin,
