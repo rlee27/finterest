@@ -21,11 +21,12 @@ class Api::PinsController < ApplicationController
   end
 
   def create
+    debugger
     @pin = Pin.new(pin_params)
     if @pin.save
       render :show
     else
-      render json: @pin.errors.full_messages
+      render json: @pin.errors.full_messages, status: 422
     end
   end
 
@@ -34,7 +35,7 @@ class Api::PinsController < ApplicationController
     if @pin.update(pin_params)
       render :show
     else
-      render json: @pin.errors.full_messages
+      render json: @pin.errors.full_messages, status: 404
     end
   end
 
@@ -43,7 +44,7 @@ class Api::PinsController < ApplicationController
     if @pin.destroy
       render :show
     else
-      render json: ["This pin does not exist"]
+      render json: ["This pin does not exist"], status: 404
     end
   end
 
