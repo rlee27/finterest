@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
     resources :pins, except: [:index, :new, :edit, :create]
 
+    resources :fins, only: :create
+
     resource :sessions, only: [:create, :destroy]
   end
 
