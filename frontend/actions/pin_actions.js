@@ -76,9 +76,9 @@ export const createPin = (userId, formData) => {
   };
 };
 
-export const editPin = (pin) => {
+export const editPin = (pinId, pin) => {
   return (dispatch) => {
-    return PinAPIUtil.editPin(pin)
+    return PinAPIUtil.editPin(pinId, pin)
       .then((pin) => {
         return dispatch(receivePin(pin));
       },

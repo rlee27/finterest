@@ -23,9 +23,9 @@ export const createPin = (userId, formData) => {
   });
 };
 
-export const editPin = (pin) => {
+export const editPin = (pinId, pin) => {
   return $.ajax({
-    url: `/api/pins/${pin.id}`,
+    url: `/api/pins/${pinId}`,
     method: 'PATCH',
     data: { pin },
   });
