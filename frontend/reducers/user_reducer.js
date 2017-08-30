@@ -15,7 +15,7 @@ const UserReducer = (state = defaultState, action) => {
       nextState = Object.assign({}, state, {user: action.payload.user});
       return nextState;
     case RECEIVE_ERRORS:
-      nextState = merge({}, state, {errors: action.payload.user.errors});
+      nextState = merge({}, state, {errors: action.errors});
       return nextState;
     default:
       return state;

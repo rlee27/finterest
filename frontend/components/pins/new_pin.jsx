@@ -99,10 +99,14 @@ class NewPin extends React.Component {
     formData.append("pin[image]", this.state.imageFile);
     formData.append("pin[pin_url]", "www.google.com");
 
-    this.props.createPin(this.props.currentUser.id, formData)
+    if (this.state.imageFile === null) {
+      this.props.receiveErrors(["Must upload an image"]);
+    } else {
+      this.props.createPin(this.props.currentUser.id, formData)
       .then((res) => {
         this.closeModal();
       });
+    }
   }
 
   render() {

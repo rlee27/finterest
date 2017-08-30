@@ -23,7 +23,7 @@ export const getUser = (userId) => {
         return dispatch(receiveUser(user));
       },
       (errors) => {
-        return receiveErrors(errors);
+        return dispatch(receiveErrors(errors));
       });
   };
 };

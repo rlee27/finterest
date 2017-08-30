@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NewPin from './new_pin.jsx';
-import { createPin, clearErrors } from '../../actions/pin_actions';
+import { createPin, clearErrors, receiveErrors } from '../../actions/pin_actions';
 import { getUserBoards } from '../../actions/board_actions';
 import { getTopics } from '../../actions/topic_actions';
 
@@ -28,7 +28,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     getTopics: () => {
       return dispatch(getTopics());
-    }
+    },
+    receiveErrors: (errors) => {
+      return dispatch(receiveErrors(errors));
+    },
   });
 };
 
