@@ -35,6 +35,11 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id
 
+  has_many :pin_descriptions,
+    class_name: :PinDescription,
+    primary_key: :id,
+    foreign_key: :user_id
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
