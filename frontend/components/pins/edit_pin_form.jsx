@@ -92,6 +92,14 @@ class EditPinForm extends React.Component {
       });
   }
 
+  checkDefault() {
+    if (!this.props.pin.topic_id) {
+      return 0;
+    } else {
+      return this.props.pin.topic_id;
+    }
+  }
+
   render() {
     return(
       <div>
@@ -123,9 +131,9 @@ class EditPinForm extends React.Component {
             <div className="form-content">
               <label htmlFor="topic">Topic</label>
               <select onChange={this.update('topic_id')}
-                defaultValue={this.props.pin.topic_id}
+                defaultValue={this.checkDefault()}
                 className="topic-selector form-input-field">
-                <option disabled value="select topic">Select Topic</option>
+                <option disabled value="0">Select Topic</option>
                 {this.topicOptions()}
               </select>
             </div>
