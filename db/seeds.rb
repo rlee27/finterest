@@ -17,11 +17,42 @@
 # board2 = Board.create!(title: "ExampleBoard1", author_id: user2.id)
 # board3 = Board.create!(title: "ExampleBoard1", author_id: user3.id)
 
-pin1 = Pin.create!(pin_url: "http://www.google.com",
-  author: User.all[0], board: User.all[0].boards[0])
-pin2 = Pin.create!(pin_url: "http://www.facebook.com",
-  author: User.all[1], board: User.all[1].boards[0])
-pin3 = Pin.create!(pin_url: "http://www.youtube.com",
-  author: User.all[2], board: User.all[2].boards[0])
-pin4 = Pin.create!(pin_url: "http://www.twitter.com",
-  author: User.all[1], board: User.all[1].boards[0])
+# pin1 = Pin.create!(pin_url: "http://www.google.com",
+#   author: User.all[0], board: User.all[0].boards[0])
+# pin2 = Pin.create!(pin_url: "http://www.facebook.com",
+#   author: User.all[1], board: User.all[1].boards[0])
+# pin3 = Pin.create!(pin_url: "http://www.youtube.com",
+#   author: User.all[2], board: User.all[2].boards[0])
+# pin4 = Pin.create!(pin_url: "http://www.twitter.com",
+#   author: User.all[1], board: User.all[1].boards[0])
+
+# topics = {
+#   popular: "Popular",
+#   everything: "Everything",
+#   shop: "Shop",
+#   animalsAndPets: "Animals and Pets",
+#   architechture: "Architechture",
+#   art: "Art",
+#   diy: "DIY and Crafts",
+#   design: "Design",
+#   entertainment: "Entertainment",
+#   foodAndDrink: "Food and Drink",
+#   hairAndBeauty: "Hair and Beauty",
+#   healthAndFitness: "healthAndFitness",
+#   humor: "Humor",
+#   illustrations: "Illustrations",
+#   kidsAndParenting: "Kids and Parenting",
+#   mensFashion: "Men's Fashion",
+#   outdoors: "Outdoors",
+#   photography: "Photography",
+#   science: "Science",
+#   sports: "Sports",
+#   tattoos: "Tattoos",
+#   travel: "Travel",
+#   weddings: "Weddings",
+#   womensFashion: "Womens Fashion",
+# }
+#
+# topics.each do |_, v|
+#   Topic.create!(name: v)
+# end

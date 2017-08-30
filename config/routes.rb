@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     patch '/users/:userId/boards/:boardId', to: 'boards#update'
     delete '/users/:userId/boards/:boardId', to: 'boards#destroy'
 
+    resources :topics, only: :index
+
     resources :pins, except: [:index, :new, :edit, :create]
 
     resource :sessions, only: [:create, :destroy]
