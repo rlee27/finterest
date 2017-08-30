@@ -83,14 +83,15 @@ class EditPinForm extends React.Component {
     this.closeModal();
   }
 
-  deleteAndRedirect() {
-    const boardTitle = this.props.board.title.split(" ").join("-");
-    this.closeModal();
-    this.props.destroyPin(this.props.pin.id)
-      .then((res) => {
-        return this.props.history.push(`/${this.props.userId}/boards/${boardTitle}`);
-      });
-  }
+  // deleteAndRedirect() {
+  //   const boardTitle = this.props.board.title.split(" ").join("-");
+  //   this.closeModal();
+  //   this.props.destroyPin(this.props.pin.id)
+  //     .then((res) => {
+  //       return this.props.history.push(`/${this.props.currentUser.id}/boards/${boardTitle}`);
+  //     });
+  // }
+  // use this function or something similar for when user is on pin show, and deletes
 
   checkDefault() {
     if (!this.props.pin.topic_id) {
