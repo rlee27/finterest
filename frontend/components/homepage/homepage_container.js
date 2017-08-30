@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   return ({
     currentUser,
-    topics: state.entities.topics,
+    topics: state.entities.topics.topics,
   });
 };
 
