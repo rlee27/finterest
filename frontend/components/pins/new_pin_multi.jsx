@@ -268,6 +268,9 @@ class NewPin extends React.Component {
               ✚
             </div>
           </div>
+          <h3 className="create-board-text">
+            Create Pin
+          </h3>
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}

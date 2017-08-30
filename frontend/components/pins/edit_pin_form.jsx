@@ -19,7 +19,7 @@ class EditPinForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.deleteAndRedirect = this.deleteAndRedirect.bind(this);
+    // this.deleteAndRedirect = this.deleteAndRedirect.bind(this);
   }
 
   renderErrors() {
