@@ -11,6 +11,8 @@
 
 class Fin < ApplicationRecord
   validates :board, :pin, presence: true
+  validates :pin, uniqueness: { scope: :board,
+    message: "already exists on the board" }
 
   belongs_to :board,
     class_name: :Board,
