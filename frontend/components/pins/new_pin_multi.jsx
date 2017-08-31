@@ -261,26 +261,28 @@ class NewPin extends React.Component {
 
   render() {
     return(
-      <button onClick={this.openModal}>
-        <div className="board-card">
-          <div className="add-board-box">
-            <div className="plus">
-              ✚
+      <div>
+        <button onClick={this.openModal}>
+          <div className="pin-create-card">
+            <div className="add-board-box">
+              <div className="plus">
+                ✚
+              </div>
             </div>
+            <h3 className="create-board-text">
+              Create Pin
+            </h3>
           </div>
-          <h3 className="create-board-text">
-            Create Pin
-          </h3>
-          <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}
-            style={newBoardStyle}
-            contentLabel='sans-serif'>
+        </button>
+        <Modal
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.closeModal}
+          style={newBoardStyle}
+          contentLabel='sans-serif'>
 
-            {this.renderForm()}
-          </Modal>
-        </div>
-      </button>
+          {this.renderForm()}
+        </Modal>
+      </div>
     );
   }
 }
