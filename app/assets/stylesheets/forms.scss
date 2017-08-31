@@ -87,3 +87,8 @@ textarea.form-input-field {
 .upload-buttons {
   display: flex;
 }
+
+.upload-part {
+  display: flex;
+  flex-direction: column;
+}
