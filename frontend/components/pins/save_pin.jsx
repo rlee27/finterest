@@ -21,7 +21,7 @@ class SavePin extends React.Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   closeModal() {
@@ -72,7 +72,7 @@ class SavePin extends React.Component {
     return (
       <div>
         <button className="save-pin-button" onClick={this.openModal}>
-          <img src={ window.staticImages.fin } />
+          <i className="fa fa-thumb-tack" aria-hidden="true"></i>
         </button>
         <Modal
           isOpen={this.state.modalOpen}
