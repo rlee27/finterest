@@ -15,6 +15,10 @@ class BoardDetailItem extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.receiveABoard({board: {pin_ids: []}});
+  }
+
   protectedEdit() {
     if (this.props.currentUser.id === parseInt(this.props.userId)) {
       return <EditBoardContiner />;
