@@ -32,7 +32,7 @@ class BoardDetailItem extends React.Component {
       return(
         <div>
           {this.protectedEdit()}
-          <BoardPinContainer />
+          <BoardPinContainer userId={this.props.userId}/>
         </div>
       );
     } else {
