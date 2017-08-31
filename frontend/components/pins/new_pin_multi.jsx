@@ -160,7 +160,7 @@ class NewPin extends React.Component {
         );
       case 2:
         return(
-          <div>
+          <div className="upload-part">
             <form onSubmit={this.handleSubmit}>
               <h3>Create Pin</h3>
               {this.renderErrors()}
@@ -209,7 +209,7 @@ class NewPin extends React.Component {
         );
       case 3:
         return (
-          <div>
+          <div className="upload-part">
             <form onSubmit={this.handleSubmit}>
               <h3>Create Pin</h3>
               {this.renderErrors()}

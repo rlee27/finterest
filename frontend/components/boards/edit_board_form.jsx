@@ -77,9 +77,10 @@ class EditBoardForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <h3 className="create-board-text">
               Edit:
-              <br />
-              <p className="board-title">{this.props.board.title}</p>
             </h3>
+            {this.renderErrors()}
+            <br />
+            <p className="board-title">{this.props.board.title}</p>
             <hr className="line-break" />
             <div className="form-content">
               <label htmlFor="title">Title</label>
@@ -101,7 +102,6 @@ class EditBoardForm extends React.Component {
             </div>
           </form>
           <hr className="line-break" />
-          {this.renderErrors()}
           <div className="board-form-buttons">
             <button className="basic-button"
               onClick={this.deleteAndRedirect}>
