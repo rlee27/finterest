@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import Homepage from './homepage';
-import { logout, receiveCurrentUser } from '../../actions/session_actions';
+import { getUser } from '../../actions/user_actions';
+import { logout } from '../../actions/session_actions';
 import { getTopics } from '../../actions/topic_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,8 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
-    receiveCurrentUser: (user) => {
-      return dispatch(receiveCurrentUser(user));
+    getUser: (user) => {
+      return dispatch(getUser(user));
     },
     getTopics: () => {
       return dispatch(getTopics());

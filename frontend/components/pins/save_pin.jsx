@@ -20,6 +20,10 @@ class SavePin extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    
+  }
+
   closeModal() {
     this.setState({ modalOpen: false });
     return this.props.clearErrors();
