@@ -25,7 +25,7 @@ class PinIndex extends React.Component {
   }
 
   protectedPinCreate() {
-    if (this.props.currentUser.id === this.props.user.id) {
+    if (this.props.currentUser.id === this.props.userId) {
       return <NewPinContainer /> ;
       // ????? does it need to be a container if it is just a form?
     } else {

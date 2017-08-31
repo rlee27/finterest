@@ -15,5 +15,5 @@ export const selectUserBoards = (state, user) => {
 };
 
 export const selectBoardPins = (state, board) => {
-  return board.pin_ids ? board.pin_ids.map(id => state.entities.pins) : []
+  return board.pin_ids ? board.pin_ids.map(id => state.entities.pins.userPins[id]) : []
 }

@@ -6,7 +6,9 @@ class Homepage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getUser(this.props.currentUser.id);
+    if (this.props.currentUser) {
+      this.props.getUser(this.props.currentUser.id);
+    }
     if (!this.props.topics) {
       return this.props.getTopics();
     }

@@ -1,10 +1,18 @@
 import React from 'react';
-import { values } from 'lodash';
+import { values, keys } from 'lodash';
 import EditBoardContiner from './edit_board_container';
+import BoardPinContainer from '../pins/board_pin_container';
 
 class BoardDetailItem extends React.Component {
   componentDidMount() {
-    return this.props.getABoard(this.props.userId, this.props.boardTitle);
+    if (!keys(this.props.userBoards).includes(this.props.currentUser.board_ids[0])) {
+      return this.props.getUser(this.props.currentUser.id)
+        .then(() => {
+          return this.props.getABoard(this.props.userId, this.props.boardTitle);
+        });
+    } else {
+      return this.props.getABoard(this.props.userId, this.props.boardTitle);
+    }
   }
 
   protectedEdit() {
@@ -15,25 +23,12 @@ class BoardDetailItem extends React.Component {
     }
   }
 
-  renderPins() {
-    return this.props.board.pin_ids.map((pinId) => {
-      return (
-        <li>
-          {pinId}
-        </li>
-      );
-    });
-  }
-
   render() {
     if (this.props.board) {
       return(
         <div>
-          <header>
-            {this.protectedEdit()}
-          </header>
-          <h1>{this.props.board.title}</h1>
-
+          {this.protectedEdit()}
+          <BoardPinContainer />
         </div>
       );
     } else {
