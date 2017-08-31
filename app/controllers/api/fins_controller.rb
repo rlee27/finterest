@@ -13,6 +13,6 @@ class Api::FinsController < ApplicationController
   private
 
   def fin_params
-    params.require(:fin).permit(:pin_id, :board_id)
+    params.require(:fin).permit(:pin_id, :board_id, :user_id, :pin_description)
   end
 end
