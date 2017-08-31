@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PinIndex from './pin_index';
 import { createPin } from '../../actions/pin_actions';
+import { selectUserBoards } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return ({
