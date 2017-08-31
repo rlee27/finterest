@@ -5,6 +5,7 @@ import {
   RECEIVE_ERRORS,
   DELETE_PIN } from '../actions/pin_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_A_BOARD } from '../actions/board_actions';
 import { merge, omit } from 'lodash';
 
 const defaultState = {
@@ -23,6 +24,10 @@ const PinReducer = (state = defaultState, action) => {
 
     case RECEIVE_USER_PINS:
       nextState = merge({}, state, {userPins: action.userPins});
+      return nextState;
+
+    case RECEIVE_A_BOARD:
+      nextState = merge({}, state, {userPins: action.payload.pins});
       return nextState;
 
     case RECEIVE_PIN:

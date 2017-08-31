@@ -27,8 +27,8 @@ const BoardReducer = (state = defaultState, action) => {
 
     case RECEIVE_A_BOARD:
       const addedBoardState = merge(
-        {}, state, {userBoards: {[action.board.id]: action.board}});
-      nextState = merge({}, addedBoardState, {board: action.board});
+        {}, state, {userBoards: {[action.payload.board.id]: action.payload.board}});
+      nextState = merge({}, addedBoardState, {board: action.payload.board});
       return nextState;
 
     case RECEIVE_ERRORS:

@@ -12,10 +12,10 @@ export const receiveAllBoards = (userBoards) => {
   });
 };
 
-export const receiveABoard = (board) => {
+export const receiveABoard = (payload) => {
   return({
     type: RECEIVE_A_BOARD,
-    board,
+    payload,
   });
 };
 
