@@ -111,69 +111,71 @@ class NewPin extends React.Component {
 
   render() {
     return(
-      <button onClick={this.openModal}>
-        <div className="board-card">
-          <div className="add-board-box">
-            <div className="plus">
-              ✚
+      <div className="pin-card">
+        <button onClick={this.openModal}>
+          <div className="board-card">
+            <div className="add-board-box">
+              <div className="plus">
+                ✚
+              </div>
             </div>
+            <h3 className="create-board-text">
+              Create Pin
+            </h3>
           </div>
-          <h3 className="create-board-text">
-            Create Pin
-          </h3>
-          <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}
-            style={newBoardStyle}
-            contentLabel='sans-serif'>
+        </button>
+        <Modal
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.closeModal}
+          style={newBoardStyle}
+          contentLabel='sans-serif'>
 
-            <form onSubmit={this.handleSubmit}>
-              <p>Create Pin</p>
-              {this.renderErrors()}
-              <hr className="line-break" />
-              <div className="form-content">
-                <label htmlFor="board">Pin to</label>
-                  <select onChange={this.update('board')}
-                    defaultValue="select board"
-                    className="form-input-field topic-selector" >
-                    <option disabled value="select board">Select Board</option>
-                    {this.boardOptions()}
-                  </select>
-              </div>
-              <hr className="line-break" />
-              <div className="form-content">
-                <label htmlFor="topic">Topic</label>
-                <select onChange={this.update('topic_id')}
-                  defaultValue="select topic"
-                  className="topic-selector form-input-field">
-                  <option disabled value="select topic">Select Topic</option>
-                  {this.topicOptions()}
-                </select>
-              </div>
-              <hr className="line-break" />
-              <div className="form-content">
-                <label htmlFor="file">Upload Image</label>
-                <input type="file" onChange={this.updateFile}
-                  className="form-input-field uploader" />
-              </div>
-              <hr className="line-break" />
-              <div className="form-content">
-                <label htmlFor="description">Description</label>
-                <textarea defaultValue={this.props.pin.description}
-                  onChange={this.update('description')}
-                  placeholder="What is your pin about?"
-                  className="form-input-field">
-                </textarea>
-              </div>
-            </form>
+          <form onSubmit={this.handleSubmit}>
+            <p>Create Pin</p>
+            {this.renderErrors()}
             <hr className="line-break" />
-            <div className="board-form-buttons">
-              <button className="basic-button" onClick={this.closeModal}>Cancel</button>
-              <button className="basic-button" onClick={this.handleSubmit}>Create</button>
+            <div className="form-content">
+              <label htmlFor="board">Pin to</label>
+                <select onChange={this.update('board')}
+                  defaultValue="select board"
+                  className="form-input-field topic-selector" >
+                  <option disabled value="select board">Select Board</option>
+                  {this.boardOptions()}
+                </select>
             </div>
-          </Modal>
-        </div>
-      </button>
+            <hr className="line-break" />
+            <div className="form-content">
+              <label htmlFor="topic">Topic</label>
+              <select onChange={this.update('topic_id')}
+                defaultValue="select topic"
+                className="topic-selector form-input-field">
+                <option disabled value="select topic">Select Topic</option>
+                {this.topicOptions()}
+              </select>
+            </div>
+            <hr className="line-break" />
+            <div className="form-content">
+              <label htmlFor="file">Upload Image</label>
+              <input type="file" onChange={this.updateFile}
+                className="form-input-field uploader" />
+            </div>
+            <hr className="line-break" />
+            <div className="form-content">
+              <label htmlFor="description">Description</label>
+              <textarea defaultValue={this.props.pin.description}
+                onChange={this.update('description')}
+                placeholder="What is your pin about?"
+                className="form-input-field">
+              </textarea>
+            </div>
+          </form>
+          <hr className="line-break" />
+          <div className="board-form-buttons">
+            <button className="basic-button" onClick={this.closeModal}>Cancel</button>
+            <button className="basic-button" onClick={this.handleSubmit}>Create</button>
+          </div>
+        </Modal>
+      </div>
     );
   }
 }

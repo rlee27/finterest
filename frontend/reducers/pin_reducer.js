@@ -33,7 +33,7 @@ const PinReducer = (state = defaultState, action) => {
     case RECEIVE_PIN:
       const addedPinState = merge(
         {}, state, {userPins: {[action.pin.id]: action.pin}});
-      nextState = merge({}, addedPinState, {pin: action.pin});
+      nextState = Object.assign({}, addedPinState, {pin: action.pin});
       return nextState;
 
     case DELETE_PIN:

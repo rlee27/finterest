@@ -72,7 +72,8 @@ class SavePin extends React.Component {
     return (
       <div>
         <button className="save-pin-button" onClick={this.openModal}>
-          <i className="fa fa-thumb-tack" aria-hidden="true"></i>
+          <i className="fa fa-thumb-tack" aria-hidden="true" />
+          <p>Save</p>
         </button>
         <Modal
           isOpen={this.state.modalOpen}
