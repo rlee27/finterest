@@ -2,12 +2,9 @@ import React from 'react';
 import { values } from 'lodash';
 import NewPinContainer from './new_pin_container';
 import EditPinContainer from './edit_pin_container';
+import SavePinContainer from './save_pin_container';
 
 class PinIndex extends React.Component {
-  componentDidMount() {
-
-  }
-
   pinList() {
     const allUserPins = values(this.props.userPins);
     return allUserPins.map((pin) => {
@@ -15,6 +12,9 @@ class PinIndex extends React.Component {
         <li key={pin.id} className="board-card">
           <div className="edit-button">
             <EditPinContainer pin={pin} />
+          </div>
+          <div className="save-button">
+            <SavePinContainer pin={pin} />
           </div>
           <div className="board-cover">
             <img src={pin.image_url} />

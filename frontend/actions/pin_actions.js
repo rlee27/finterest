@@ -99,3 +99,15 @@ export const destroyPin = (pinId) => {
       });
   };
 };
+
+export const savePin = (pin) => {
+  return (dispatch) => {
+    return PinAPIUtil.savePin(pin)
+      .then((pin) => {
+        return dispatch(receivePin(pin));
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+      });
+  };
+};

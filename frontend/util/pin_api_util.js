@@ -37,3 +37,11 @@ export const destroyPin = (pinId) => {
     method: 'DELETE',
   });
 };
+
+export const savePin = (fin) => {
+  return $.ajax({
+    url: '/api/fins',
+    method: 'POST',
+    data: { fin },
+  });
+};
