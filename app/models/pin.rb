@@ -54,10 +54,5 @@ class Pin < ApplicationRecord
 
   has_many :boards,
     through: :fins,
-    source: :boards
-
-  has_many :pin_descriptions,
-    class_name: :PinDescription,
-    primary_key: :id,
-    foreign_key: :pin_id
+    source: :board
 end

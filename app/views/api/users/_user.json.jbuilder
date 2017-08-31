@@ -1,7 +1,7 @@
 json.user do
   json.extract! user, :id, :email, :name
   json.board_ids user.boards.pluck(:id)
-  json.pin_ids user.pins.pluck(:id)
+  json.pin_ids user.pins.pluck(:id).concat(user.pinned.pluck(:pin_id)).uniq
 end
 
 json.boards do
@@ -16,7 +16,11 @@ end
 json.pins do
   user.pins.each do |pin|
     json.set! pin.id do
-      pin.fins.where(user_id: user.id)
+      json.partial! 'api/pins/pin', pin: pin
+    end
+  end
+  user.pinned.each do |pin|
+    json.set! pin.id do
       json.partial! 'api/pins/pin', pin: pin
     end
   end

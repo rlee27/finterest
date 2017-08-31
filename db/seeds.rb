@@ -56,3 +56,11 @@
 # topics.each do |_, v|
 #   Topic.create!(name: v)
 # end
+
+# Fin.create!(user_id: 35, pin_id: 2, pin_description: "this is seeded!", board_id: 1)
+# Fin.create!(user_id: 38, pin_id: 2, pin_description: "this is seedededed!", board_id: 52)
+# Fin.create!(user_id: 39, pin_id: 2, pin_description: "this is also seeded!", board_id: 53)
+# Fin.create!(user_id: 37, pin_id: 4, pin_description: "this is seeded!", board_id: 3)
+# Fin.create!(user_id: 35, pin_id: 3, pin_description: "this is seededededed!", board_id: 1)
+# Fin.create!(user_id: 37, pin_id: 3, pin_description: "this is seeded!", board_id: 3)
+# Fin.create!(user_id: 38, pin_id: 9, pin_description: "this is seeded!", board_id: 52)

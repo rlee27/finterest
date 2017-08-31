@@ -35,8 +35,12 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id
 
-  has_many :pin_descriptions,
-    class_name: :PinDescription,
+  has_many :pinned,
+    through: :fins,
+    source: :pin
+
+  has_many :fins,
+    class_name: :Fin,
     primary_key: :id,
     foreign_key: :user_id
 
