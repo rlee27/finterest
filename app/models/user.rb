@@ -26,8 +26,13 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
-  has_attached_file :image, default_url: "http://s3-us-east-2.amazonaws.com/finterest-dev/users/images/000/000/035/original/user_default.png?1504230438"
+  has_attached_file :image,
+                    default_url: "http://s3-us-east-2.amazonaws.com/finterest-dev/users/images/000/000/035/original/user_default.png"
+  has_attached_file :avatar,
+                    default_url: "https://s3.us-east-2.amazonaws.com/finterest-dev/users/avatars/000/000/035/small/user_default.png",
+                    styles: { small: "24x24" }, default_style: :small
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 

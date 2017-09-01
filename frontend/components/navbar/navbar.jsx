@@ -49,7 +49,12 @@ class NavBar extends React.Component {
             </li>
             <li>
               <button className="nav-button" onClick={this.toShow}>
-                [user-img] {this.props.currentUserName}
+                <div className="nav-user">
+                  <img className="user-avatar" src={this.props.currentUser.avatar_url} />
+                  <span className="user-name">
+                    {this.props.currentUserName}
+                  </span>
+                </div>
               </button>
             </li>
             <li>
