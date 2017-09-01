@@ -3,7 +3,6 @@ json.user do
   json.board_ids user.boards.pluck(:id)
   json.pin_ids user.pins.pluck(:id).concat(user.pinned.pluck(:pin_id)).uniq
   json.image_url user.image.url
-  json.follow_ids user.follows.pluck(followable_id)
 end
 
 json.boards do

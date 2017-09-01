@@ -1,2 +1,2 @@
-module FollowsHelper
+module Api::FollowsHelper
 end

@@ -5,7 +5,7 @@ import TopicForm from './topic_form';
 const mapStateToProps = (state) => {
   return({
     currentUser: state.session.currentUser,
-    topics: state.entities.topics.topcs,
+    topics: state.entities.topics.topics,
   });
 };
 
