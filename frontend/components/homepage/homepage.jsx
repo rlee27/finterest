@@ -20,7 +20,7 @@ class Homepage extends React.Component {
       this.props.currentUser.follow_ids.length < 5) {
         return <TopicFormContainer />;
     } else {
-      return null;
+      return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
     }
   }
 

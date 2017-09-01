@@ -1,3 +1,62 @@
 // Place all the styles related to the api/topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// For the topic form
+// input[type=checkbox] {
+//   visibility: hidden;
+// }
+
+form.topic-form {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 100%
+}
+
+button.topic-submit {
+  height: 100%;
+  background-color: #1c54d8;
+  border: none;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 4px;
+  color: white;
+  padding: 10px;
+}
+
+button.topic-submit:hover {
+  background-color: #007EB2;
+  border-radius: 20px;
+}
+
+button.topic-submit:active {
+  box-shadow: 0 0 0 3px white, 0 0 0 4px #007EB2;
+}
+
+button.topic-submit:disabled {
+  display: none;
+}
+
+div.topic-selector {
+  border: 1px solid red;
+}
+
+div.checked {
+  background-color: black;
+}
+
+label.topic-label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+div.topic-list {
+  column-count: 3;
+  column-width: auto;
+}
+
+input.checkbox {
+  margin: 5px;
+}
