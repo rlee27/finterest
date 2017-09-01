@@ -66,7 +66,7 @@ class EditBoardForm extends React.Component {
     return(
       <div>
         <button className="edit-board-button" onClick={this.openModal}>
-          🖊
+          <i className="fa fa-pencil" aria-hidden="true"></i>
         </button>
         <Modal
           isOpen={this.state.modalOpen}
