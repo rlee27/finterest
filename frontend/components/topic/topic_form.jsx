@@ -21,6 +21,10 @@ class TopicForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState({topics: 0, modalOpen: false});
+  }
+
   closeModal() {
     this.setState({ modalOpen: false });
   }
@@ -32,12 +36,11 @@ class TopicForm extends React.Component {
   topicOptions() {
     return values(this.props.topics).map((topic) => {
       return(
-        <label className="topic-label">
+        <label className="topic-label" key={topic.id}>
           <div>
             {topic.name}
           </div>
           <input type="checkbox"
-            key={topic.id}
             value={topic.id}
             name={topic.name}
             onClick={this.handleChange} />
@@ -49,7 +52,11 @@ class TopicForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.state.topics = this.selectedTopics;
+    return this.props.sendFollowTopics(this.props.currentUser.id,
+                                       this.selectedTopics)
+      .then(() => {
+        return this.closeModal();
+      });
   }
 
   handleChange(e) {

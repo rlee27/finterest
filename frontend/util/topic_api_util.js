@@ -4,3 +4,11 @@ export const getTopics = () => {
     method: 'GET',
   });
 };
+
+export const followTopics = (userId, followedTopicIds) => {
+  return $.ajax({
+    url: `/api/users/${userId}/follows`,
+    method: 'POST',
+    data: { topic_ids: followedTopicIds }
+  });
+};
