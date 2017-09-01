@@ -45,3 +45,10 @@ export const savePin = (fin) => {
     data: { fin },
   });
 };
+
+export const fetchHomePins = (userId) => {
+  return $.ajax({
+    url: `/api/users/${userId}/home_pins`,
+    method: 'GET',
+  });
+};

@@ -2,21 +2,23 @@
 #
 # Table name: pins
 #
-#  id                 :integer          not null, primary key
-#  pin_url            :string
-#  author_id          :integer          not null
-#  board_id           :integer          not null
-#  description        :text
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  topic_id           :integer
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
+#  id                     :integer          not null, primary key
+#  pin_url                :string
+#  author_id              :integer          not null
+#  board_id               :integer          not null
+#  description            :text
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  topic_id               :integer
+#  image_file_name        :string
+#  image_content_type     :string
+#  image_file_size        :integer
+#  image_updated_at       :datetime
+#  thumbnail_file_name    :string
+#  thumbnail_content_type :string
+#  thumbnail_file_size    :integer
+#  thumbnail_updated_at   :datetime
 #
-
-
 
 class Pin < ApplicationRecord
   validates :author, :board, presence: true
@@ -24,7 +26,12 @@ class Pin < ApplicationRecord
   has_attached_file :image, default_url: "pin-default.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  after_save :ensure_pin_url
+  # has_attached_file :thumbnail,
+  #                   default_url: "https://s3.us-east-2.amazonaws.com/finterest-dev/users/avatars/000/000/035/small/user_default.png",
+  #                   styles: { normal: "24x24" }, default_style: :normal
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  after_initialize :ensure_pin_url
 
 
   def ensure_pin_url

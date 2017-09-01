@@ -80,7 +80,7 @@ class SignUp extends React.Component {
 
   loginDemo() {
     const demoUser = {
-      email: 'password',
+      email: 'spongebob@example.com',
       password: 'password'
     };
     this.props.login(demoUser);

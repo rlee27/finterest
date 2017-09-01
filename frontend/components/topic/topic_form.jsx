@@ -54,9 +54,12 @@ class TopicForm extends React.Component {
     e.preventDefault();
     return this.props.sendFollowTopics(this.props.currentUser.id,
                                        this.selectedTopics)
-      .then(() => {
-        return this.closeModal();
-      });
+      .then((currentUser) => {
+        return this.props.getHomePins(this.props.currentUser.id);
+      })
+        .then(() => {
+          return this.props.closeModal();
+        });
   }
 
   handleChange(e) {

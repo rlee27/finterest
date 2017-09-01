@@ -57,6 +57,15 @@ class Api::PinsController < ApplicationController
     end
   end
 
+  def home_pins
+    @user = User.find(params[:userId])
+    if @user
+      render :home_pins
+    else
+      render json: ["Cannot find user"], status: 404
+    end
+  end
+
   private
 
   def pin_params

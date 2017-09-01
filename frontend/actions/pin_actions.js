@@ -4,6 +4,7 @@ export const RECEIVE_PIN = "RECEIVE_PIN";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const DELETE_PIN = "DELETE_PIN";
+export const RECEIVE_HOME_PINS = "RECEIVE_HOME_PINS";
 
 export const receiveUserPins = (userPins) => {
   return ({
@@ -37,6 +38,13 @@ export const clearErrors = () => {
   return ({
     type: CLEAR_ERRORS,
     errrors: [],
+  });
+};
+
+export const receiveHomePins = (homePins) => {
+  return ({
+    type: RECEIVE_HOME_PINS,
+    homePins,
   });
 };
 
@@ -105,6 +113,18 @@ export const savePin = (pin) => {
     return PinAPIUtil.savePin(pin)
       .then((pin) => {
         return dispatch(receivePin(pin));
+      },
+      (errors) => {
+        return dispatch(receiveErrors(errors.responseJSON));
+      });
+  };
+};
+
+export const getHomePins = (userId) => {
+  return (dispatch) => {
+    return PinAPIUtil.fetchHomePins(userId)
+      .then((homePins) => {
+        return dispatch(receiveHomePins(homePins));
       },
       (errors) => {
         return dispatch(receiveErrors(errors.responseJSON));

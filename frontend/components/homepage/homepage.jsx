@@ -1,5 +1,7 @@
 import React from 'react';
 import TopicFormContainer from '../topic/topic_form_container';
+import PinIndex from '../pins/pin_index';
+import { values } from 'lodash';
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -15,28 +17,32 @@ class Homepage extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.homePins && this.props.currentUser.id) {
+      this.props.getHomePins(this.props.currentUser.id);
+    }
+  }
+
   renderTopicPicker() {
     if (this.props.currentUser.follow_ids &&
       this.props.currentUser.follow_ids.length < 5) {
         return <TopicFormContainer />;
     } else {
-      return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
+      return null;
     }
   }
 
   render(){
-    if (this.props.currentUser) {
+    if (this.props.homePins) {
       return(
         <div>
-          <h2>
-            Hi, {this.props.currentUser.name}, the rest of the site is still
-            under construction...
-          </h2>
           {this.renderTopicPicker()}
+          <PinIndex userPins={this.props.homePins.pins}
+            currentUser={this.props.currentUser} />
         </div>
       );
     } else {
-      return null;
+      return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
     }
   }
 }

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
     resources :pins, except: [:index, :new, :edit, :create]
 
+    get '/users/:userId/home_pins', to: 'pins#home_pins'
+
     resources :fins, only: :create
 
     resource :sessions, only: [:create, :destroy]

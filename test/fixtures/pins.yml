@@ -2,18 +2,22 @@
 #
 # Table name: pins
 #
-#  id                 :integer          not null, primary key
-#  pin_url            :string
-#  author_id          :integer          not null
-#  board_id           :integer          not null
-#  description        :text
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  topic_id           :integer
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
+#  id                     :integer          not null, primary key
+#  pin_url                :string
+#  author_id              :integer          not null
+#  board_id               :integer          not null
+#  description            :text
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  topic_id               :integer
+#  image_file_name        :string
+#  image_content_type     :string
+#  image_file_size        :integer
+#  image_updated_at       :datetime
+#  thumbnail_file_name    :string
+#  thumbnail_content_type :string
+#  thumbnail_file_size    :integer
+#  thumbnail_updated_at   :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
