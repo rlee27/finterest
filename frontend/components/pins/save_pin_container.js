@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SavePin from './save_pin';
 import { clearErrors, savePin } from '../../actions/pin_actions';
+import { getUser } from '../../actions/user_actions';
 import { selectUserBoards } from '../../reducers/selectors';
 
 const mapStateToProps = (state, props) => {
@@ -21,7 +22,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     savePin: (pin) => {
       return dispatch(savePin(pin));
-    }
+    },
+    getUser: (userId) => {
+      return dispatch(getUser(userId));
+    },
   });
 };
 

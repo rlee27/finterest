@@ -103,7 +103,7 @@ class EditPinForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div key={this.props.pin.id}>
         <button className="edit-board-button" onClick={this.openModal}>
           <i className="fa fa-pencil" aria-hidden="true"></i>
         </button>

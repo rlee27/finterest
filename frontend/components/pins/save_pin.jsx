@@ -21,7 +21,9 @@ class SavePin extends React.Component {
   }
 
   componentDidMount() {
-
+    // if (!this.props.userBoards.includes(this.props.currentUser.board_id[0])) {
+    //   return this.props.getUser(this.props.currentUser.id);
+    // }
   }
 
   closeModal() {
