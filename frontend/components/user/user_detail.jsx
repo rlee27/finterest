@@ -19,7 +19,7 @@ class UserDetail extends React.Component {
 
   switchBoardPin() {
     return(
-      <div>
+      <div className="board-pin-option">
         <button onClick={this.goToBoards} className="nav-button">Boards</button>
         <button onClick={this.goToPins} className="nav-button">Pins</button>
       </div>
@@ -29,9 +29,10 @@ class UserDetail extends React.Component {
   render() {
     return (
       <div className="user-info">
-        <h2>
+        <h2 className="user-name">
           {this.props.user.name}
         </h2>
+        <img src={this.props.user.image_url} />
         {this.switchBoardPin()}
       </div>
     );

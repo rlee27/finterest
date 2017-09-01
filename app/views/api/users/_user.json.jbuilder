@@ -2,6 +2,7 @@ json.user do
   json.extract! user, :id, :email, :name
   json.board_ids user.boards.pluck(:id)
   json.pin_ids user.pins.pluck(:id).concat(user.pinned.pluck(:pin_id)).uniq
+  json.image_url user.image.url
 end
 
 json.boards do

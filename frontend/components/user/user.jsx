@@ -22,7 +22,7 @@ class User extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="user-show">
         <UserDetailContainer />
         <div className="board-list">
           <Route exact path="/:userId" component={BoardIndexContainer} />

@@ -2,18 +2,22 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  gender          :string
-#  age             :string
-#  name            :string           not null
-#  location        :string
-#  about           :text
-#  website         :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  email              :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  gender             :string
+#  age                :string
+#  name               :string           not null
+#  location           :string
+#  about              :text
+#  website            :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -21,6 +25,9 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
+
+  has_attached_file :image, default_url: "http://s3-us-east-2.amazonaws.com/finterest-dev/users/images/000/000/035/original/user_default.png?1504230438"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 
