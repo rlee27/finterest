@@ -20,19 +20,26 @@ class UserDetail extends React.Component {
   switchBoardPin() {
     return(
       <div className="board-pin-option">
-        <button onClick={this.goToBoards} className="nav-button">Boards</button>
-        <button onClick={this.goToPins} className="nav-button">Pins</button>
+        <button onClick={this.goToBoards} className="nav-button user-buttons">Boards</button>
+        <button onClick={this.goToPins} className="nav-button user-buttons">Pins</button>
       </div>
     );
   }
 
   render() {
     return (
-      <div className="user-info">
-        <h2 className="user-name">
-          {this.props.user.name}
-        </h2>
-        <img src={this.props.user.image_url} />
+      <div className="user-box">
+        <div className="user-info">
+          <div className="user-details">
+            <h2 className="user-name">
+              {this.props.user.name}
+            </h2>
+          </div>
+          <div className="user-pic-container">
+            <img className="user-pic" src={this.props.user.image_url} />
+          </div>
+        </div>
+        <br />
         {this.switchBoardPin()}
       </div>
     );
