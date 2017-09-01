@@ -8,10 +8,11 @@ button {
   z-index: 50;
   position: fixed;
   height: 60px;
-  background-color: #74D6FF;
+  background-color: rgba(116, 198, 255, 0.7);
   justify-content: space-between;
   align-items: center;
   font-family: 'Droid Sans', sans-serif;
+  border-bottom: 1px solid grey;
 }
 
 .logo-button {
