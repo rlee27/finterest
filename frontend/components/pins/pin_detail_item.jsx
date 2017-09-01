@@ -21,6 +21,10 @@ class PinDetailItem extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.receivePin({});
+  }
+
   closeModal() {
     this.setState({ modalOpen: false });
     this.props.history.go(-1);

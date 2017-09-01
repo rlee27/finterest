@@ -19,7 +19,7 @@ const style = {
     flexDirection   : 'column',
     color           : 'white',
     fontWeight      : '700',
-    minWidth        : '80%',
+    maxWidth        : '80%',
     maxHeight       : '80%',
   }
 };
