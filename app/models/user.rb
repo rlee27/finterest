@@ -2,22 +2,26 @@
 #
 # Table name: users
 #
-#  id                 :integer          not null, primary key
-#  email              :string           not null
-#  password_digest    :string           not null
-#  session_token      :string           not null
-#  gender             :string
-#  age                :string
-#  name               :string           not null
-#  location           :string
-#  about              :text
-#  website            :string
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
+#  id                  :integer          not null, primary key
+#  email               :string           not null
+#  password_digest     :string           not null
+#  session_token       :string           not null
+#  gender              :string
+#  age                 :string
+#  name                :string           not null
+#  location            :string
+#  about               :text
+#  website             :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  image_file_name     :string
+#  image_content_type  :string
+#  image_file_size     :integer
+#  image_updated_at    :datetime
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -42,6 +46,11 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     dependent: :destroy
 
+  has_many :topics,
+    through: :follows,
+    source: :followable,
+    source_type: "Topic"
+
   has_many :pins,
     class_name: :Pin,
     primary_key: :id,
@@ -53,6 +62,11 @@ class User < ApplicationRecord
 
   has_many :fins,
     class_name: :Fin,
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :follows,
+    class_name: :Follow,
     primary_key: :id,
     foreign_key: :user_id
 

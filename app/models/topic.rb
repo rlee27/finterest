@@ -20,4 +20,12 @@ class Topic < ApplicationRecord
     class_name: :Pin,
     primary_key: :id,
     foreign_key: :topic_id
+
+  has_many :followers,
+    through: :follows,
+    source: :followable,
+    source_type: "Follower"
+
+  has_many :follows, as: :followable
+
 end
