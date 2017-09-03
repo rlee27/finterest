@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return ({
     userPins: state.entities.pins.userPins,
     currentUser: state.session.currentUser,
-    userId: state.entities.users.user,
+    user: state.entities.users.user,
   });
 };
 
