@@ -15,7 +15,7 @@ Finterest is a web application for sharing of ideas and photos for those who liv
 * Have your own description for pins you save
 
 ## Home Feed
-[Home Feed](./docs/home_feed.png)
+![Home Feed](./docs/home_feed.png)
 ### Home Feed Details:
 * Finterest first prompts new users to select 5 topics to follow. These 5 topics are then attached to the user as followed topics. Finterest then searches all pins in the database for any pins that have the same topics the user chooses to follow. A polymorphic 'follows' table is used to link the user and the topics the user can follow.
 
