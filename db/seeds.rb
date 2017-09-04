@@ -128,6 +128,7 @@ board28 = Board.create!(title: "Travel", author_id: user10.id, topic_id: topic22
 
 board29 = Board.create!(title: "Cuties", author_id: user7.id, topic_id: topic4.id, description: "Squishy squishy")
 
+Pin.destroy_all
 pin1 = Pin.create!(author_id: user1.id, topic_id: topic14.id, board_id: board2.id, description: "", image: "http://68.media.tumblr.com/93ddd8913dca45fc367c737ed3382c04/tumblr_mr57ild5Uw1setkt4o1_1280.png")
 pin2 = Pin.create!(author_id: user1.id, topic_id: topic9.id, board_id: board1.id, description: "", image: "https://cdn.drawception.com/images/panels/2015/11-20/LmEH4OYX58-6.png")
 pin3 = Pin.create!(author_id: user1.id, topic_id: topic9.id, board_id: board1.id, description: "", image: "https://i0.wp.com/mtv.mtvnimages.com/uri/mgid:file:http:shared:mtv.com/news/wp-content/uploads/2015/01/13-1422483650.gif")
