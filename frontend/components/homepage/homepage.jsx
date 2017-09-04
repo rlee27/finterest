@@ -42,7 +42,7 @@ class Homepage extends React.Component {
         </div>
       );
     } else {
-      return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
+      return null;
     }
   }
 }
