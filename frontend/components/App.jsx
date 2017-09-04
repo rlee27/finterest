@@ -16,7 +16,7 @@ const App = (props) => {
       </header>
 
       <div className="main-content">
-        <ProtectedHomeRoute path="/" component={HomepageContainer} />
+        <ProtectedHomeRoute exact path="/" component={HomepageContainer} />
         <Switch>
           <AuthRoute exact path="/login" component={SessionFormContainer} />
           <ProtectedRoute exact path="/:userId" component={UserContainer} />

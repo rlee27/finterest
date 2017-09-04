@@ -10,7 +10,8 @@ class Homepage extends React.Component {
 
   componentDidMount() {
     if (this.props.currentUser) {
-      this.props.getUser(this.props.currentUser.id);
+      this.props.getUser(this.props.currentUser.id)
+        .then(() => this.props.getHomePins(this.props.currentUser.id));
     }
     if (!this.props.topics) {
       return this.props.getTopics();
@@ -18,7 +19,7 @@ class Homepage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.homePins && this.props.currentUser.id) {
+    if (!nextProps.currentUser.follow_ids && this.props.currentUser.id) {
       this.props.getHomePins(this.props.currentUser.id);
     }
   }
@@ -33,7 +34,7 @@ class Homepage extends React.Component {
   }
 
   render(){
-    if (this.props.homePins) {
+    if (this.props.homePins && this.props.currentUser.follow_ids.length) {
       return(
         <div>
           {this.renderTopicPicker()}
