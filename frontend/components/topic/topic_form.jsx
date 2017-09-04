@@ -58,7 +58,7 @@ class TopicForm extends React.Component {
         return this.props.getHomePins(this.props.currentUser.id);
       })
         .then(() => {
-          return this.props.closeModal();
+          return this.closeModal();
         });
   }
 
