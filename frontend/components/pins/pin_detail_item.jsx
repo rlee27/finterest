@@ -45,11 +45,11 @@ class PinDetailItem extends React.Component {
             </div>
             <hr className="line-break" />
             <button>
-              <Link to={`${this.props.pin.image_url}`}>Visit</Link>
+              <a href={`${this.props.pin.image_url}`}>Visit</a>
             </button>
             <hr className="line-break" />
             <button>
-              <Link to={`/pins/${this.props.pin.author_id}`}>To Author</Link>
+              <Link to={`/${this.props.pin.author_id}`}>To Author</Link>
             </button>
           </div>
         </Modal>
