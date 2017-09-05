@@ -10,21 +10,21 @@ class PinIndex extends React.Component {
     const allUserPins = values(this.props.userPins);
     return allUserPins.map((pin) => {
       return (
-        <Link to={`/pins/${pin.id}`} key={pin.id}>
-          <li className="pin-card">
-            <div className="pin-options">
-              <div className="pin-edit-button">
-                <EditPinContainer pin={pin} />
-              </div>
-              <div className="save-button">
-                <SavePinContainer pin={pin} />
-              </div>
+        <li className="pin-card" key={pin.id}>
+          <div className="pin-options">
+            <div className="pin-edit-button">
+              <EditPinContainer pin={pin} />
             </div>
+            <div className="save-button">
+              <SavePinContainer pin={pin} />
+            </div>
+          </div>
+          <Link to={`/pins/${pin.id}`}>
             <div className="pin-cover">
               <img src={pin.image_url} className="pin-image"/>
             </div>
-          </li>
-        </Link>
+          </Link>
+        </li>
       );
     });
   }

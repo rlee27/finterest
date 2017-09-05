@@ -101,81 +101,91 @@ class EditPinForm extends React.Component {
     }
   }
 
-  render() {
-    return(
-      <div key={this.props.pin.id}>
-        <button className="edit-board-button" onClick={this.openModal}>
-          <i className="fa fa-pencil" aria-hidden="true"></i>
-        </button>
-        <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.closeModal}
-          style={newBoardStyle}
-          contentLabel='sans-serif'>
+  checkAuthor() {
+    if (this.props.currentUser.id == this.props.pin.author_id) {
 
-          <form onSubmit={this.handleSubmit}>
-            <h3 className="create-board-text">
-              Edit this Pin
-            </h3>
-            {this.renderErrors()}
-            <hr className="line-break" />
-            <div className="form-content">
-              <label htmlFor="board">Pin to</label>
+    }
+  }
+
+  render() {
+    if (this.props.currentUser.id == this.props.pin.author_id) {
+      return(
+        <div key={this.props.pin.id}>
+          <button className="edit-board-button" onClick={this.openModal}>
+            <i className="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
+            style={newBoardStyle}
+            contentLabel='sans-serif'>
+
+            <form onSubmit={this.handleSubmit}>
+              <h3 className="create-board-text">
+                Edit this Pin
+              </h3>
+              {this.renderErrors()}
+              <hr className="line-break" />
+              <div className="form-content">
+                <label htmlFor="board">Pin to</label>
                 <select onChange={this.update('board_id')}
                   defaultValue={this.props.board_id}
                   className="form-input-field topic-selector" >
                   <option disabled value="select board">Select Board</option>
                   {this.boardOptions()}
                 </select>
-            </div>
+              </div>
+              <hr className="line-break" />
+              <div className="form-content">
+                <label htmlFor="topic">Topic</label>
+                <select onChange={this.update('topic_id')}
+                  defaultValue={this.checkDefault()}
+                  className="topic-selector form-input-field">
+                  <option disabled value="0">Select Topic</option>
+                  {this.topicOptions()}
+                </select>
+              </div>
+              <hr className="line-break" />
+              <div className="form-content">
+                <label htmlFor="description">Description</label>
+                <textarea defaultValue={this.props.pin.description}
+                  onChange={this.update('description')}
+                  placeholder="What is your pin about?"
+                  className="form-input-field">
+                </textarea>
+              </div>
+              <hr className="line-break" />
+              <div className="form-content">
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  defaultValue={this.props.pin.pin_url}
+                  onChange={this.update('pin_url')}
+                  placeholder="From what site?"
+                  className="form-input-field" />
+              </div>
+            </form>
             <hr className="line-break" />
-            <div className="form-content">
-              <label htmlFor="topic">Topic</label>
-              <select onChange={this.update('topic_id')}
-                defaultValue={this.checkDefault()}
-                className="topic-selector form-input-field">
-                <option disabled value="0">Select Topic</option>
-                {this.topicOptions()}
-              </select>
+            <div className="board-form-buttons">
+              <button className="basic-button"
+                onClick={this.deleteAndRedirect}>
+                Delete Pin
+              </button>
+              <button className="basic-button"
+                onClick={this.closeModal}>
+                Cancel
+              </button>
+              <button className="basic-button"
+                onClick={this.handleSubmit}>
+                Save
+              </button>
             </div>
-            <hr className="line-break" />
-            <div className="form-content">
-              <label htmlFor="description">Description</label>
-              <textarea defaultValue={this.props.pin.description}
-                onChange={this.update('description')}
-                placeholder="What is your pin about?"
-                className="form-input-field">
-              </textarea>
-            </div>
-            <hr className="line-break" />
-            <div className="form-content">
-              <label htmlFor="website">Website</label>
-              <input
-                type="text"
-                defaultValue={this.props.pin.pin_url}
-                onChange={this.update('pin_url')}
-                placeholder="From what site?"
-                className="form-input-field" />
-            </div>
-          </form>
-          <hr className="line-break" />
-          <div className="board-form-buttons">
-            <button className="basic-button"
-              onClick={this.deleteAndRedirect}>
-              Delete Pin
-            </button>
-            <button className="basic-button"
-              onClick={this.closeModal}>
-              Cancel
-            </button>
-            <button className="basic-button"
-              onClick={this.handleSubmit}>
-              Save
-            </button>
-          </div>
-        </Modal>
-      </div>
-    );
+          </Modal>
+        </div>
+      );
+    } else {
+      return <div />;
+    }
   }
 }
 
