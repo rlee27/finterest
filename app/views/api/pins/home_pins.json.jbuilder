@@ -8,14 +8,14 @@
 
 topic_pins = []
 
-all_topics = Topic.find_by(name: "Everything")
+all_topics = Topic.find_by(name: "Everything").id
 
-if @user.follows.includes(all_topics)
-  topic_pins.concat(Pin.all)
-else
+if @user.follows.where(followable_id: all_topics).empty?
   @user.follows.each do |follow|
     topic_pins.concat(Pin.all.where(topic_id: follow.followable_id))
   end
+else
+  topic_pins.concat(Pin.all)
 end
 
 topic_pins = topic_pins.reject { |pin| pin.author_id == @user.id }

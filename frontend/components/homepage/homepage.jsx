@@ -43,7 +43,11 @@ class Homepage extends React.Component {
         </div>
       );
     } else {
-      return null;
+      return(
+        <div>
+          {this.renderTopicPicker()};
+        </div>
+      );
     }
   }
 }
