@@ -52,6 +52,7 @@ class SessionForm extends React.Component {
         <div className="form-container">
           <div className="session-form-container">
             <h3>Welcome to Finterest</h3>
+            <img src={ window.staticImages.logo } className="login-logo"></img>
             <br />
             {this.renderErrors()}
             <form className="session-form" onSubmit={this.handleSubmit}>

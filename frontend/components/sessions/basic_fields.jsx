@@ -4,6 +4,7 @@ const BasicFields = ({ state, handleChange, handleSubmit, renderErrors }) => {
   return(
     <div className="session-form-container">
       <h3>Welcome to Finterest</h3>
+      <img src={ window.staticImages.logo } className="login-logo"></img>
       <br />
       {renderErrors()}
       <form className="session-form" onSubmit={handleSubmit}>
