@@ -29,8 +29,8 @@ class NavBar extends React.Component {
           <div className="left-side-nav">
             <li>
               <button className="logo-button" onClick={this.goHome}>
-                <div className="logo-image">
-                  <img src={ window.staticImages.logo }></img>
+                <div className="logo-image-container">
+                  <img src={ window.staticImages.logo } className="logo-image"></img>
                 </div>
               </button>
             </li>
