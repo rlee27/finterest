@@ -12,7 +12,7 @@ const style = {
     position        : 'fixed',
     border          : '1px solid #007EB2',
     zIndex          : 800,
-    backgroundColor : '#74D6FF',
+    backgroundColor : '#8CC0FF',
     fontFamily      : "'Droid Sans', sans-serif",
     fontSize        : '16px',
     display         : 'flex',
