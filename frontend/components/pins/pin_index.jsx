@@ -4,6 +4,7 @@ import NewPinContainer from './new_pin_container';
 import EditPinContainer from './edit_pin_container';
 import SavePinContainer from './save_pin_container';
 import { Link } from 'react-router-dom';
+import Masonry from 'react-masonry-component';
 
 class PinIndex extends React.Component {
   pinList() {
@@ -34,7 +35,6 @@ class PinIndex extends React.Component {
       if (this.props.user.id === this.props.currentUser.id) {
         return <NewPinContainer /> ;
       }
-      // ????? does it need to be a container if it is just a form?
     } else {
       return null;
     }
@@ -42,10 +42,14 @@ class PinIndex extends React.Component {
 
   render() {
     return (
-      <ul className="pin-index">
-        {this.protectedPinCreate()}
-        {this.pinList()}
-      </ul>
+      <div>
+        <Masonry
+          className="pin-index"
+          elementType="ul">
+          {this.protectedPinCreate()}
+          {this.pinList()}
+        </Masonry>
+      </div>
     );
   }
 }
