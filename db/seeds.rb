@@ -207,3 +207,10 @@ fin6 = Fin.create!(user_id: user3.id, pin_id: pin51.id, pin_description: "Hahah 
 fin7 = Fin.create!(user_id: user5.id, pin_id: pin54.id, pin_description: "Surfs up dude!", board_id: board15.id)
 fin8 = Fin.create!(user_id: user5.id, pin_id: pin55.id, pin_description: "awesome!", board_id: board15.id)
 fin8 = Fin.create!(user_id: user5.id, pin_id: pin56.id, pin_description: "sweett", board_id: board15.id)
+
+Follow.destroy_all
+follow1 = Follow.create!(user_id: user2.id, followable_type: "Topic", followable_id: topic2.id)
+follow2 = Follow.create!(user_id: user2.id, followable_type: "Topic", followable_id: topic4.id)
+follow3 = Follow.create!(user_id: user2.id, followable_type: "Topic", followable_id: topic16.id)
+follow4 = Follow.create!(user_id: user2.id, followable_type: "Topic", followable_id: topic22.id)
+follow5 = Follow.create!(user_id: user2.id, followable_type: "Topic", followable_id: topic13.id)
