@@ -35,18 +35,10 @@ class NavBar extends React.Component {
               </button>
             </li>
           </div>
-          <li>
-            Search..
-          </li>
           <div className="right-side-nav">
             <li>
               <button className="nav-button" onClick={this.goHome}>
                 Home
-              </button>
-            </li>
-            <li>
-              <button className="nav-button">
-                Explore
               </button>
             </li>
             <li>
