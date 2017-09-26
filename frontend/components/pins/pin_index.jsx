@@ -80,9 +80,7 @@ class PinIndex extends React.Component {
 
   render() {
     let options = {
-      transitionDuration: 0,
-      gutter: 25,
-      fitWidth: true
+      transitionDuration: 0
     };
 
     return (
