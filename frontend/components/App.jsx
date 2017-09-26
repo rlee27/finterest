@@ -29,7 +29,5 @@ const App = (props) => {
     </div>
   );
 };
-// have App component listen to the store, if currentUser render the homepage, else
-// render the signUp.
 
 export default App;
