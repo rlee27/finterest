@@ -7,8 +7,46 @@ import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-component';
 
 class PinIndex extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cards: 20
+    };
+
+    this.infiniteScroll = this.infiniteScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.bottom = false;
+    window.addEventListener("scroll", this.infiniteScroll);
+
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.infiniteScroll);
+  }
+
+  infiniteScroll() {
+    $(window).scroll(() => {
+      if($(window).scrollTop() <= $(document).height() - $(window).height() &&
+          $(window).scrollTop() >= $(document).height() - $(window).height() - 50) {
+            window.bottom = true;
+          }
+    });
+
+    if (window.bottom) {
+      if (this.state.cards < values(this.props.userPins).length) {
+        this.setState({
+          cards: this.state.cards + 10
+        });
+      }
+      window.bottom = false;
+    }
+  }
+
   pinList() {
-    const allUserPins = values(this.props.userPins);
+    const allUserPins = values(this.props.userPins).slice(0, this.state.cards);
     return allUserPins.map((pin) => {
       return (
         <li className="pin-card" key={pin.id}>
@@ -41,11 +79,20 @@ class PinIndex extends React.Component {
   }
 
   render() {
+    let options = {
+      transitionDuration: 0,
+      gutter: 25,
+      fitWidth: true
+    };
+
     return (
       <div>
         <Masonry
           className="pin-index"
-          elementType="ul">
+          elementType="ul"
+          options={ options }
+          disableImagesLoaded={ false }
+          updateOnEachImageLoad={ false }>
           {this.protectedPinCreate()}
           {this.pinList()}
         </Masonry>
