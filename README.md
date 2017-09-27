@@ -1,18 +1,14 @@
 # Finterest
-Finterest is a web application for sharing of ideas and photos for those who live under the sea. This was inspired by Pinterest. Finterest was built using Ruby on Rails with React.js.
+Finterest is a single-page web application, inspired by Pinterest. Finterest was built using Ruby on Rails with Redux.js and React.js.
 
-[Finterest](https://finterest17.herokuapp.com/#/)
+[Finterest](http://finterest17.herokuapp.com/#/)
 
 ## Features
-* Sign up/Log in with email
 * Curate a user's home feed
-* Create Boards
-* Create Pins
-* Upload pin content from either local device or internet
+* Create and edit Boards
+* Upload Pin content from either local device or internet
 * Follow topics
-* Visit other user pages and interact their boards and pins
-* Save other pins to your own boards
-* Have your own description for pins you save
+* Save other users' Pins to user's own boards
 
 ## Home Feed
 ![Home Feed](./docs/home_feed.png)
@@ -23,12 +19,12 @@ Finterest is a web application for sharing of ideas and photos for those who liv
 The libraries used for Finterest:
 * [React](https://github.com/facebook/react)
 * [React-Router](https://github.com/ReactTraining/react-router)
-* [React-Modal](https://github.com/reactjs/react-modal)
 * [Paperclip](https://github.com/thoughtbot/paperclip)
 * [figaro](https://github.com/laserlemon/figaro)
 * [BCrypt](https://github.com/codahale/bcrypt-ruby)
 
 ## Todos
 - [ ] Implementation of user and board follows
-- [ ] Notifications
+- [ ] Explore
 - [ ] Search
+- [ ] Notifications
