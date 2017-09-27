@@ -60,7 +60,7 @@ class PinIndex extends React.Component {
           </div>
           <Link to={`/pins/${pin.id}`}>
             <div className="pin-cover">
-              <img src={pin.image_url} className="pin-image"/>
+              <img src={pin.thumb} className="pin-image"/>
             </div>
           </Link>
         </li>

@@ -25,6 +25,7 @@ json.pins do
     json.set! pin.id do
       json.extract! pin, :id, :pin_url, :board_id, :author_id, :topic_id
       json.image_url pin.image.url
+      json.thumb pin.image(:thumb)
     end
   end
 end

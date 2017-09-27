@@ -10,3 +10,5 @@ end
 json.description pin_info
 
 json.image_url pin.image.url
+
+json.thumb pin.image(:thumb)
