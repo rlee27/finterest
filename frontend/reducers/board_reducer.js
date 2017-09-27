@@ -6,6 +6,7 @@ import {
   DELETE_BOARD } from '../actions/board_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { merge, values, omit } from 'lodash';
+import { RECEIVE_PIN } from '../actions/pin_actions';
 
 const defaultState = {
   userBoards: {},
@@ -37,6 +38,10 @@ const BoardReducer = (state = defaultState, action) => {
 
     case CLEAR_ERRORS:
       nextState = Object.assign({}, state, {errors: []});
+      return nextState;
+
+    case RECEIVE_PIN:
+      nextState = merge({}, state, {pin_ids: state.board.pin_ids.push(action.pin.id)});
       return nextState;
 
     case DELETE_BOARD:
