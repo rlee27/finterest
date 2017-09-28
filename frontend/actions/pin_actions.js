@@ -5,11 +5,19 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const DELETE_PIN = "DELETE_PIN";
 export const RECEIVE_HOME_PINS = "RECEIVE_HOME_PINS";
+export const MAKE_PIN = "MAKE_PIN";
 
 export const receiveUserPins = (userPins) => {
   return ({
     type: RECEIVE_USER_PINS,
     userPins,
+  });
+};
+
+export const makePin = (pin) => {
+  return ({
+    type: MAKE_PIN,
+    pin,
   });
 };
 
@@ -76,7 +84,7 @@ export const createPin = (userId, formData) => {
   return (dispatch) => {
     return PinAPIUtil.createPin(userId, formData)
       .then((pin) => {
-        return dispatch(receivePin(pin));
+        return dispatch(makePin(pin));
       },
       (errors) => {
         return dispatch(receiveErrors(errors.responseJSON));

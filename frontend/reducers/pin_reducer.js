@@ -4,6 +4,7 @@ import {
   CLEAR_ERRORS,
   RECEIVE_ERRORS,
   DELETE_PIN,
+  MAKE_PIN,
   RECEIVE_HOME_PINS } from '../actions/pin_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_A_BOARD } from '../actions/board_actions';
@@ -39,6 +40,11 @@ const PinReducer = (state = defaultState, action) => {
       const addedPinState = merge(
         {}, state, {userPins: {[action.pin.id]: action.pin}});
       nextState = Object.assign({}, addedPinState, {pin: action.pin});
+      return nextState;
+
+    case MAKE_PIN:
+      nextState = merge(
+        {}, state, {userPins: {[action.pin.id]: action.pin}});
       return nextState;
 
     case DELETE_PIN:
