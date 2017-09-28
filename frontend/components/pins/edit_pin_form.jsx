@@ -19,7 +19,7 @@ class EditPinForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.deleteAndRedirect = this.deleteAndRedirect.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   renderErrors() {
@@ -83,15 +83,10 @@ class EditPinForm extends React.Component {
     this.closeModal();
   }
 
-  // deleteAndRedirect() {
-  //   const boardTitle = this.props.board.title.split(" ").join("-");
-  //   this.closeModal();
-  //   this.props.destroyPin(this.props.pin.id)
-  //     .then((res) => {
-  //       return this.props.history.push(`/${this.props.currentUser.id}/boards/${boardTitle}`);
-  //     });
-  // }
-  // use this function or something similar for when user is on pin show, and deletes
+  delete() {
+    this.closeModal();
+    this.props.destroyPin(this.props.pin.id, this.props.board_id);
+  }
 
   checkDefault() {
     if (!this.props.pin.topic_id) {
@@ -168,7 +163,7 @@ class EditPinForm extends React.Component {
             <hr className="line-break" />
             <div className="board-form-buttons">
               <button className="basic-button"
-                onClick={this.deleteAndRedirect}>
+                onClick={this.delete}>
                 Delete Pin
               </button>
               <button className="basic-button"

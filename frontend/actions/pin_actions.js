@@ -96,9 +96,9 @@ export const editPin = (pinId, pin) => {
   };
 };
 
-export const destroyPin = (pinId) => {
+export const destroyPin = (pinId, boardId) => {
   return (dispatch) => {
-    return PinAPIUtil.destroyPin(pinId)
+    return PinAPIUtil.destroyPin(pinId, boardId)
       .then((pin) => {
         return dispatch(deletePin(pin));
       },

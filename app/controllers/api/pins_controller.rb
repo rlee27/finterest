@@ -50,7 +50,9 @@ class Api::PinsController < ApplicationController
 
   def destroy
     @pin = Pin.find(params[:id])
-    if @pin.destroy
+    if @pin
+      board = Board.find(params[:board_id])
+      board.pin_ids.delete(params[:id])
       render :show
     else
       render json: ["This pin does not exist"], status: 404

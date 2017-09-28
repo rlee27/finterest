@@ -23,8 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     clearErrors: () => {
       return dispatch(clearErrors());
     },
-    destroyPin: (pinId) => {
-      return dispatch(destroyPin(pinId));
+    destroyPin: (pinId, boardId) => {
+      return dispatch(destroyPin(pinId, boardId));
     },
   });
 };

@@ -31,10 +31,11 @@ export const editPin = (pinId, pin) => {
   });
 };
 
-export const destroyPin = (pinId) => {
+export const destroyPin = (pinId, board_id) => {
   return $.ajax({
     url: `/api/pins/${pinId}`,
     method: 'DELETE',
+    data: { board_id },
   });
 };
 
