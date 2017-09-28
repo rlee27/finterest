@@ -28,10 +28,20 @@ class BoardDetailItem extends React.Component {
   }
 
   render() {
-    if (this.props.board) {
+    if (this.props.board.pin_ids) {
       return(
         <div>
-          {this.protectedEdit()}
+          <div className="board-title-container">
+            <div className="board-detail-info">
+              <p className="board-detail-title">
+                {this.props.board.title}
+              </p>
+              {this.protectedEdit()}
+            </div>
+            <p className="pin-counter">
+              <span className="pin-count">{this.props.board.pin_ids.length}</span> pins
+            </p>
+          </div>
           <BoardPinContainer user={this.props.user}/>
         </div>
       );
