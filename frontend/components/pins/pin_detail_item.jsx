@@ -49,7 +49,8 @@ class PinDetailItem extends React.Component {
             </button>
             <hr className="line-break" />
             <button>
-              <Link to={`/${this.props.pin.author_id}`}>To Author</Link>
+              <img className="user-avatar" src={this.props.pin.author_avatar}/>
+              <Link to={`/${this.props.pin.author_id}`}>{this.props.pin.author_name}</Link>
             </button>
           </div>
         </Modal>
