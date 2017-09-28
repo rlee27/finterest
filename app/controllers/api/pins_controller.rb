@@ -34,7 +34,7 @@ class Api::PinsController < ApplicationController
     end
 
     if pin_transaction
-      render :show
+      render :create
     else
       render json: @pin.errors.full_messages, status: 422
     end
