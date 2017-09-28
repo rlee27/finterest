@@ -9,6 +9,10 @@ class UserDetail extends React.Component {
     this.goToPins = this.goToPins.bind(this);
   }
 
+  componentWillMount() {
+    this.props.receiveUser({user: {}});
+  }
+
   componentWillUnmount() {
     this.props.receiveUser({user: {}});
   }
