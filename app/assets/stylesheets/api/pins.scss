@@ -95,3 +95,20 @@
 .pin-show-image {
   max-width: 100%
 }
+
+.edit-pin-button {
+  height: 48px;
+  width: 48px;
+  font-size: 25px;
+  color: white;
+  background-color: rgba(0, 126, 178, 0.7);
+  border-radius: 50%;
+}
+
+.edit-pin-button:hover {
+  background-color: rgba(0, 126, 179, 1.0);
+}
+
+.edit-pin-button:active {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #007EB2;
+}

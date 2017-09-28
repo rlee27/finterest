@@ -106,7 +106,7 @@ class EditPinForm extends React.Component {
     if (this.props.currentUser.id == this.props.pin.author_id) {
       return(
         <div key={this.props.pin.id}>
-          <button className="edit-board-button" onClick={this.openModal}>
+          <button className="edit-pin-button" onClick={this.openModal}>
             <i className="fa fa-pencil" aria-hidden="true"></i>
           </button>
           <Modal
