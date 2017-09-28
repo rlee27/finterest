@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PinIndex from './pin_index';
 import { createPin } from '../../actions/pin_actions';
+import { selectUserPins } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
+  const user = state.entities.users.user;
   return ({
-    userPins: state.entities.pins.userPins,
+    userPins: selectUserPins(state, user),
     currentUser: state.session.currentUser,
-    user: state.entities.users.user,
+    user,
   });
 };
 

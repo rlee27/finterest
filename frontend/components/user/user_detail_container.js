@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import UserDetail from './user_detail';
+import { receiveUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users.user;
@@ -12,7 +13,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-
+    receiveUser: (userId) => {
+      return dispatch(receiveUser(userId));
+    },
   });
 };
 
