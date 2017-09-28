@@ -9,6 +9,10 @@ class UserDetail extends React.Component {
     this.goToPins = this.goToPins.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.receiveUser({user: {}});
+  }
+
   goToBoards() {
     this.props.history.push(`/${this.props.user.id}/boards`);
   }
