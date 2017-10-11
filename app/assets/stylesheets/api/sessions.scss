@@ -4,6 +4,9 @@
 
 .signup-component {
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-container {
@@ -120,4 +123,15 @@ input {
   0% {
     transform: translateY(-700px);
   }
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  align-self: center;
+  color: white;
+  margin-top: 5%;
+  width: 20%;
+  justify-content: space-between;
 }

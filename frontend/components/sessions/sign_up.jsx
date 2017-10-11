@@ -134,11 +134,22 @@ class SignUp extends React.Component {
     }
   }
 
-  render(){
+  footer() {
+    return(
+      <ul className="footer-info">
+        <li><a href="https://github.com/rlee27" target="_blank">GitHub</a></li>
+        <li><a href="http://rlee.me" target="_blank">Website</a></li>
+        <li><a href="https://linkedin.com/in/rlee27" target="_blank">LinkedIn</a></li>
+      </ul>
+    );
+  }
+
+  render() {
     return(
       <div className="signup-component">
         <BackgroundImage />
         {this.renderForm()}
+        {this.footer()}
       </div>
     );
   }

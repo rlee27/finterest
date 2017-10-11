@@ -25,6 +25,12 @@ main {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .main-content > * {
