@@ -15,7 +15,7 @@
 }
 
 .session-form-container {
-   background-color: #8CC0FF;
+   background-color: #daebfa;
    padding: 50px;
    border-radius: 10px;
    font-weight: 700;
@@ -52,6 +52,19 @@ input {
 }
 
 .login-button {
+  background-color: #daebfa;
+  border: 1px solid white;
+  border-radius: 5px;
+  height: 30px;
+  width: 75px;
+  cursor: pointer;
+  font-size: 14px;
+  color: black;
+  margin: 5px;
+  font-weight: 600;
+}
+
+.login-button-demo {
   background-color: #007EB2;
   border: 1px solid white;
   border-radius: 5px;
@@ -61,6 +74,7 @@ input {
   font-size: 14px;
   color: white;
   margin: 5px;
+  font-weight: 600;
 }
 
 .login-header {

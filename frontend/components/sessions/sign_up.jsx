@@ -89,7 +89,7 @@ class SignUp extends React.Component {
   demoButton() {
     return(
       <button onClick={this.loginDemo}
-        className="login-button">
+        className="login-button-demo">
         Demo
       </button>
     );
