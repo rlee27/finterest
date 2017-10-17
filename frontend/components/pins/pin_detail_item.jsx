@@ -45,7 +45,7 @@ class PinDetailItem extends React.Component {
             </div>
             <hr className="line-break" />
             <button>
-              <a href={`${this.props.pin.image_url}`}>Visit</a>
+              <a href={`${this.props.pin.image_url}`}>Source</a>
             </button>
             <hr className="line-break" />
             <button>

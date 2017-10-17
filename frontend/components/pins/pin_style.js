@@ -16,6 +16,7 @@ const style = {
     fontFamily      : "'Droid Sans', sans-serif",
     fontSize        : '16px',
     display         : 'flex',
+    alignItems      : 'center',
     flexDirection   : 'column',
     color           : 'white',
     fontWeight      : '700',
