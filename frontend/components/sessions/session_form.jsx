@@ -71,7 +71,11 @@ class SessionForm extends React.Component {
               </label>
               <br />
               <button className="submit-button">Submit</button>
-              <Link to="/">Sign up instead</Link>
+              <Link to="/">
+                <button className="signup-button">
+                  Sign Up Instead
+                </button>
+              </Link>
             </form>
           </div>
         </div>

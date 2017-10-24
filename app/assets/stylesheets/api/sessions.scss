@@ -91,12 +91,27 @@ input {
 
 .submit-button {
   background-color: #007EB2;
-  border: 0px solid white;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
   padding: 6px;
   color: white;
+}
+
+.signup-button {
+  background-color: #0e43dc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px 45px;
+  color: white;
+  margin-top: 10px;
+}
+
+.signup-button:hover, .submit-button:hover {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-color: #0a2e94;
 }
 
 .session-form a {
