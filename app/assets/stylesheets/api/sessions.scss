@@ -108,7 +108,13 @@ input {
   margin-top: 10px;
 }
 
-.signup-button:hover, .submit-button:hover {
+.login-button:hover, .submit-button:hover, .login-button-demo:hover {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-color: #0e43dc;
+}
+
+.signup-button:hover {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   background-color: #0a2e94;
