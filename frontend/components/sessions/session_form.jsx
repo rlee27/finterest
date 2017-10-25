@@ -45,10 +45,41 @@ class SessionForm extends React.Component {
     );
   }
 
+  loginDemo() {
+    const demoUser = {
+      email: 'spongebob@example.com',
+      password: 'password'
+    };
+    this.props.login(demoUser);
+  }
+
+  demoButton() {
+    return(
+      <button onClick={this.loginDemo}
+        className="login-button-demo">
+        Demo
+      </button>
+    );
+  }
+
+  signupButton() {
+    return (
+      <Link to="/">
+        <button className="signup-button">
+          Sign Up
+        </button>
+      </Link>
+    );
+  }
+
   render() {
     return(
       <div>
         <BackgroundImage />
+        <header className="login-header">
+          {this.signupButton()}
+          {this.demoButton()}
+        </header>
         <div className="form-container">
           <div className="session-form-container">
             <h3>Welcome to Finterest</h3>
@@ -71,11 +102,6 @@ class SessionForm extends React.Component {
               </label>
               <br />
               <button className="submit-button">Submit</button>
-              <Link to="/">
-                <button className="signup-button">
-                  Sign Up Instead
-                </button>
-              </Link>
             </form>
           </div>
         </div>
