@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   componentDidMount() {
