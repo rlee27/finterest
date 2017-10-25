@@ -54,7 +54,7 @@ input {
    padding: 3px;
 }
 
-.login-button {
+.login-button, .signup-button {
   background-color: #daebfa;
   border: 1px solid white;
   border-radius: 5px;
@@ -98,26 +98,16 @@ input {
   color: white;
 }
 
-.signup-button {
-  background-color: #0e43dc;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 6px 45px;
-  color: white;
-  margin-top: 10px;
-}
-
-.login-button:hover, .submit-button:hover, .login-button-demo:hover {
+.submit-button:hover, .login-button-demo:hover {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  background-color: #0e43dc;
+  background-color: #026289;
 }
 
-.signup-button:hover {
+.login-button:hover, .signup-button:hover {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  background-color: #0a2e94;
+  background-color: #929ca6;
 }
 
 .session-form a {
