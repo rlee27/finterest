@@ -58,14 +58,18 @@
 
 .save-pin-button {
   display: flex;
-  background-color: #01415b;
+  background-color: #007eb2;
   margin: 5px;
   padding: 6px;
   width: 4em;
   color: white;
   justify-content: space-around;
-  border: 1px ridge white;
+  border: 1px solid white;
   border-radius: 6px;
+}
+
+.save-pin-button:hover {
+  background-color: #006f9d;
 }
 
 .pin-cover {
@@ -97,9 +101,9 @@
 }
 
 .edit-pin-button {
-  height: 48px;
-  width: 48px;
-  font-size: 25px;
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
   color: white;
   background-color: rgba(0, 126, 178, 0.7);
   border-radius: 50%;
