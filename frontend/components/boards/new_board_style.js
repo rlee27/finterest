@@ -17,12 +17,12 @@ const style = {
     bottom          : 'unset',
     border          : '1px solid #007EB2',
     zIndex          : 800,
-    backgroundColor : '#8CC0FF',
+    backgroundColor : '#F5FFFF',
     fontFamily      : "'Droid Sans', sans-serif",
     fontSize        : '16px',
     display         : 'flex',
     flexDirection   : 'column',
-    color           : 'white',
+    color           : '#5f5f5f',
     fontWeight      : '700',
   }
 };
