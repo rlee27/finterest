@@ -28,8 +28,8 @@ class UserDetail extends React.Component {
   switchBoardPin() {
     return(
       <div className="board-pin-option">
-        <button onClick={this.goToBoards} className="nav-button user-buttons">Boards</button>
-        <button onClick={this.goToPins} className="nav-button user-buttons">Pins</button>
+        <button onClick={this.goToBoards} className="user-buttons">Boards</button>
+        <button onClick={this.goToPins} className="user-buttons">Pins</button>
       </div>
     );
   }
