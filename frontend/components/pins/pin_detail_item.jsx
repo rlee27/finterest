@@ -38,6 +38,9 @@ class PinDetailItem extends React.Component {
           onRequestClose={this.closeModal}
           style={pinStyle}
           contentLabel='sans-serif'>
+          <div className="modal-close" onClick={this.closeModal}>
+            X
+          </div>
           <div className="pin-show">
             <SavePin pin={this.props.pin}/>
             <div className="pin-show-container">
@@ -45,7 +48,7 @@ class PinDetailItem extends React.Component {
             </div>
             <hr className="line-break" />
             <button>
-              <a href={`${this.props.pin.image_url}`}>Source</a>
+              <a href={`${this.props.pin.pin_url}`} target="_blank">Source</a>
             </button>
             <hr className="line-break" />
             <button>

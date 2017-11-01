@@ -116,3 +116,11 @@
 .edit-pin-button:active {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #007EB2;
 }
+
+.modal-close {
+  align-self: flex-end;
+}
+
+.modal-close:hover {
+  cursor: pointer;
+}
