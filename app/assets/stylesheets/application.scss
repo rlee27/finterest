@@ -62,5 +62,9 @@ a:visited {
   background-color: grey;
 }
 
+.error-message, .form-errors {
+  color: red;
+}
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
