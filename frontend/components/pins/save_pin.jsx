@@ -18,6 +18,7 @@ class SavePin extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -50,7 +51,7 @@ class SavePin extends React.Component {
       return(
         <ul>
           {this.props.errors.map((error, i) => {
-            return <li key={`error-${i}`}>{error}</li>;
+            return <li key={`error-${i}`} className="error-message">{error}</li>;
             })}
           </ul>
         );
@@ -69,10 +70,11 @@ class SavePin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { pin_id, board_id, user_id, pin_description } = this.state;
-    const pin = { pin_id, board_id, user_id, pin_description };
-    this.props.savePin(pin);
-    this.closeModal();
+    const { pin_id, board_id, user_id, pin_description, errors } = this.state;
+    const pin = { pin_id, board_id, user_id, pin_description, errors };
+    this.props.savePin(pin).then(() => {
+      this.closeModal();
+    });
   }
 
   render() {
