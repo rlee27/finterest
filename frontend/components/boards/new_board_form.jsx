@@ -110,7 +110,7 @@ class NewBoardForm extends React.Component {
                 <label htmlFor="topic">Topic</label>
                 <select onChange={this.update('topic_id')}
                   defaultValue="select topic"
-                  className="topic-selector">
+                  className="topic-selector form-input-field">
                   <option disabled value="select topic">Select Topic</option>
                   {this.topicOptions()}
                 </select>
