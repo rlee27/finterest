@@ -48,13 +48,13 @@
   top: 13px;
 }
 
-.pin-edit-button {
-  height: 48px;
-  width: 48px;
-  position: absolute;
-  top: 13px;
-  left: 20px;
-}
+// .pin-edit-button {
+//   height: 48px;
+//   width: 48px;
+//   position: absolute;
+//   top: 13px;
+//   left: 20px;
+// }
 
 .save-pin-button {
   display: flex;
@@ -111,6 +111,9 @@
   color: white;
   background-color: rgba(0, 126, 178, 0.7);
   border-radius: 50%;
+  position: absolute;
+  top: 13px;
+  left: 20px;
 }
 
 .edit-pin-button:hover {
