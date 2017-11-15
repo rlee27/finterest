@@ -51,9 +51,7 @@ class PinIndex extends React.Component {
       return (
         <li className="pin-card" key={pin.id}>
           <div className="pin-options">
-            <div className="pin-edit-button">
-              <EditPinContainer pin={pin} />
-            </div>
+            <EditPinContainer pin={pin} />
             <div className="save-button">
               <SavePinContainer pin={pin} />
             </div>
