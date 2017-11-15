@@ -5,13 +5,13 @@
   columns: 300px auto;
 }
 
-.pin-index > li {
-  display: inline-block;
-}
-
-.pin-index > button {
-  display: inline-block;
-}
+// .pin-index > li {
+//   display: inline-block;
+// }
+//
+// .pin-index > button {
+//   display: inline-block;
+// }
 
 .pin-card {
   width: 260px;
@@ -42,18 +42,18 @@
   background-color: rgba(0, 126, 178, 0.4);
 }
 
-.pin-options {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: inherit;
+.save-button {
   position: absolute;
-  z-index: 1;
+  right: 20px;
+  top: 13px;
 }
 
 .pin-edit-button {
   height: 48px;
   width: 48px;
+  position: absolute;
+  top: 13px;
+  left: 20px;
 }
 
 .save-pin-button {
@@ -77,6 +77,10 @@
   max-height: 800px;
   overflow: hidden;
   border-radius: 10px;
+}
+
+.pin-cover:hover {
+  cursor: zoom-in;
 }
 
 .pin-image {
