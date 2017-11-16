@@ -30,6 +30,18 @@ class PinDetailItem extends React.Component {
     this.props.history.go(-1);
   }
 
+  showUpload() {
+    if (this.props.pin.pin_url === "" || parseInt(this.props.pin.pin_url)) {
+      return (
+        <Link to={`/${this.props.pin.author_id}`}>Uploaded by {`${this.props.pin.author_name}`}</Link>
+      );
+    } else {
+      return (
+        <a href={`${this.props.pin.pin_url}`} target="_blank">Source Link</a>
+      );
+    }
+  }
+
   render() {
     if (this.props.pin) {
       return(
@@ -48,7 +60,7 @@ class PinDetailItem extends React.Component {
             </div>
             <hr className="line-break" />
             <button>
-              <a href={`${this.props.pin.pin_url}`} target="_blank">Source</a>
+              {this.showUpload()}
             </button>
             <hr className="line-break" />
             <button>
