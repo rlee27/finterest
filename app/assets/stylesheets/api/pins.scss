@@ -44,8 +44,8 @@
   display: flex;
   background-color: #007eb2;
   margin: 5px;
-  padding: 6px;
-  width: 4em;
+  padding: 8px;
+  width: 70px;
   color: white;
   justify-content: space-around;
   border: 1px solid white;
@@ -93,15 +93,17 @@
   width: 40px;
   font-size: 24px;
   color: white;
-  background-color: rgba(0, 126, 178, 0.7);
-  border-radius: 50%;
+  background-color: #F5FFFF;
+  border-radius: 20%;
   position: absolute;
-  top: 13px;
-  left: 20px;
+  border: 1px solid white;
+  top: 16px;
+  left: 25px;
+  color: #5f5f5f;
 }
 
 .edit-pin-button:hover {
-  background-color: rgba(0, 126, 179, 1.0);
+  background-color: #bfcdcd;
 }
 
 .edit-pin-button:active {
