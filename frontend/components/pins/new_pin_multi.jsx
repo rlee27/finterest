@@ -52,7 +52,17 @@ class NewPin extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalOpen: false, step: 1 });
+    this.setState({
+      pin_url: "",
+      author_id: this.props.currentUser.id,
+      board: null,
+      description: "",
+      imageFile: null,
+      imageUrl: null,
+      image: "",
+      topic_id: "",
+      step: 1,
+    });
     return this.props.clearErrors();
   }
 
@@ -93,7 +103,7 @@ class NewPin extends React.Component {
     const fileReader = new FileReader();
 
     fileReader.onloadend = () => {
-      this.setState({ imageFile: file, imageUrl: fileReader.result });
+      this.setState({ imageFile: file, imageUrl: fileReader.result, pin_url: `${this.state.author_id}` });
     };
     if (file) {
       fileReader.readAsDataURL(file);
