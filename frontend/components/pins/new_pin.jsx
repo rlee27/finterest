@@ -97,7 +97,7 @@ class NewPin extends React.Component {
     formData.append("pin[board_id]", parseInt(this.state.board));
     formData.append("pin[topic_id]", this.state.topic_id);
     formData.append("pin[image]", this.state.imageFile);
-    formData.append("pin[pin_url]", "www.google.com");
+    formData.append("pin[pin_url]", "");
 
     if (this.state.imageFile === null) {
       this.props.receiveErrors(["Must upload an image"]);
