@@ -62,6 +62,7 @@ class NewPin extends React.Component {
       image: "",
       topic_id: "",
       step: 1,
+      modalOpen: false
     });
     return this.props.clearErrors();
   }
